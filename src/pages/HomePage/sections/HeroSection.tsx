@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import backgroundImage from "../../../assets/images/Home/main.png";
+import backgroundImage from "../../../assets/images/Home/main.webp";
 import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const HeroSection = () => {
