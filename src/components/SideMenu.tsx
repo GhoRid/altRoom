@@ -14,9 +14,9 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
     { name: "알트룸 자동견적", route: "/estimate" },
     { name: "서비스소개", route: "/service" },
     { name: "기업소개", route: "/company" },
-    { name: "시공사례", route: "/cases" },
+    { name: "시공사례", route: "/construction-cases" },
     { name: "모듈정보", route: "/modules" },
-    { name: "마이크루", route: "/mycrew" },
+    { name: "마이크루", route: "/company/recruit" },
   ];
 
   const customerMenus = [
