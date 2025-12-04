@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import backgroundImage from "../../../assets/images/Home/main.webp";
+import backgroundImage from "../../../assets/images/Home/main.png";
 import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const HeroSection = () => {
@@ -42,16 +42,13 @@ const Wrapper = styled.section`
   position: relative;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  background-color: #fff;
-  background-image: url(${backgroundImage});
-  background-repeat: no-repeat;
+  background-image: url("/images/main.webp");
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &::before {
     content: "";
