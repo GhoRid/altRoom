@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import backgroundImage from "../../../assets/images/Home/main.png";
 
 const HeroSection = () => {

@@ -95,25 +95,6 @@ const SnsRow = styled.div`
   align-items: center;
 `;
 
-const SnsIcon = styled.a`
-  width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  color: #f5f5f5;
-  text-decoration: none;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #f5f5f5;
-    color: #000;
-  }
-`;
-
 const Middle = styled.div`
   display: flex;
   flex-direction: column;
@@ -186,12 +167,6 @@ const BottomLink = styled.button`
   &:hover {
     text-decoration: underline;
   }
-`;
-
-const BottomDivider = styled.span`
-  width: 1px;
-  height: 10px;
-  background-color: rgba(255, 255, 255, 0.3);
 `;
 
 const Copyright = styled.p`
