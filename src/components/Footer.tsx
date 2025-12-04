@@ -70,6 +70,10 @@ const Wrapper = styled.footer`
 const Content = styled.div`
   padding: 48px 16px;
   margin: 0 90px;
+
+  @media (max-width: 640px) {
+    margin: 0 20px;
+  }
 `;
 
 const Top = styled.div`
