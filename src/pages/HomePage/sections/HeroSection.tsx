@@ -1,25 +1,28 @@
 import styled from "styled-components";
 import backgroundImage from "../../../assets/images/Home/main.png";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const HeroSection = () => {
   return (
     <Wrapper>
       <Content>
-        <Header>MODULE SPACE COMPANY</Header>
-        <MainText>
-          당신을 위한
-          <br />단 하나의 공간
-        </MainText>
-        <SubText>
-          따뜻한 소통과 완성도 있는 공간으로 보답하겠습니다.
-          <br className="br-pc" />
-        </SubText>
+        <FadeInUpOnView transitionHeight={40}>
+          <Header>MODULE SPACE COMPANY</Header>
+          <MainText>
+            당신을 위한
+            <br />단 하나의 공간
+          </MainText>
+          <SubText>
+            따뜻한 소통과 완성도 있는 공간으로 보답하겠습니다.
+            <br className="br-pc" />
+          </SubText>
 
-        <ButtonRow>
-          <PrimaryButton>알트룸 자동견적</PrimaryButton>
-          <GhostButton>서비스소개</GhostButton>
-          <GhostButton>시공사례</GhostButton>
-        </ButtonRow>
+          <ButtonRow>
+            <PrimaryButton>알트룸 자동견적</PrimaryButton>
+            <GhostButton>서비스소개</GhostButton>
+            <GhostButton>시공사례</GhostButton>
+          </ButtonRow>
+        </FadeInUpOnView>
       </Content>
     </Wrapper>
   );
@@ -30,7 +33,7 @@ export default HeroSection;
 const Header = styled.h1`
   font-size: 1.25rem;
   line-height: 1.75rem;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 1.5rem;
   color: #fff;
 `;

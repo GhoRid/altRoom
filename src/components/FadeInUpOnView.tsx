@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 
-const fadeInUp = keyframes`
+const fadeInUp = (distance: number) => keyframes`
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(${distance}px);
   }
   to {
     opacity: 1;
@@ -12,22 +12,33 @@ const fadeInUp = keyframes`
   }
 `;
 
-const Wrapper = styled.div<{ $isVisible: boolean }>`
+const Wrapper = styled.div<{
+  $isVisible: boolean;
+  $duration: number;
+  $transitionHeight: number;
+}>`
   opacity: 0;
-  transform: translateY(20px);
-  ${({ $isVisible }) =>
+  transform: translateY(${({ $transitionHeight }) => $transitionHeight}px);
+  ${({ $isVisible, $duration, $transitionHeight }) =>
     $isVisible &&
     css`
-      animation: ${fadeInUp} 0.8s ease-out forwards;
+      animation: ${fadeInUp($transitionHeight)} ${$duration}s linear forwards;
     `}
 `;
 
-type Props = {
+type FadeInUpOnViewProps = {
   children: React.ReactNode;
   threshold?: number;
+  duration?: number; // 초 단위
+  transitionHeight?: number;
 };
 
-const FadeInUpOnView = ({ children, threshold = 1 }: Props) => {
+const FadeInUpOnView = ({
+  children,
+  threshold = 1,
+  duration = 0.8,
+  transitionHeight = 20,
+}: FadeInUpOnViewProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -47,7 +58,12 @@ const FadeInUpOnView = ({ children, threshold = 1 }: Props) => {
   }, [threshold]);
 
   return (
-    <Wrapper ref={ref} $isVisible={isVisible}>
+    <Wrapper
+      ref={ref}
+      $isVisible={isVisible}
+      $duration={duration}
+      $transitionHeight={transitionHeight}
+    >
       {children}
     </Wrapper>
   );
