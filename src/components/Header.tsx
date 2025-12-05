@@ -9,7 +9,7 @@ import { useLocation, useNavigate } from "react-router";
 
 const Header = () => {
   const location = useLocation();
-  const isTransparent = location.pathname.startsWith("/");
+  const isTransparent = location.pathname === "/";
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const [isScrolledDown, setIsScrolledDown] = useState(false);
@@ -106,6 +106,9 @@ const Container = styled.header<{
     $transparent && !$forceDark ? "#fff" : "#000"};
 
   transition: all 0.3s ease;
+
+  border-bottom: ${({ $transparent, $forceDark }) =>
+    $transparent && !$forceDark ? "none" : "1px solid #ebedf1"};
 
   @media (max-width: 425px) {
     padding: 0 20px;

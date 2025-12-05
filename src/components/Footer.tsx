@@ -19,7 +19,7 @@ const Footer = () => {
           <Middle>
             <SectionTitle>회사 정보</SectionTitle>
             <InfoRow>상호: 미하우스 주식회사</InfoRow>
-            <InfoRow>대표이사: 장재근</InfoRow>
+            <InfoRow>대표이사: 장차근</InfoRow>
             <InfoRow>사업자등록번호: 642-81-03173</InfoRow>
             <InfoRow>
               주소: 광주광역시 동구제봉로110번길7,3층302호(장동)
@@ -83,7 +83,7 @@ const Top = styled.div`
   gap: 40px;
   justify-content: space-around;
   align-items: flex-start;
-  padding-bottom: 28px;
+  padding-bottom: 40px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 `;
 
@@ -108,14 +108,14 @@ const Middle = styled.div`
 `;
 
 const SectionTitle = styled.div`
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   margin-bottom: 4px;
 `;
 
 const InfoRow = styled.p`
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.4;
   color: #9ca3af;
 `;
 
@@ -127,7 +127,7 @@ const Right = styled.div`
 `;
 
 const CallTitle = styled.div`
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   margin-bottom: 4px;
 `;
@@ -138,9 +138,9 @@ const CallNumber = styled.div`
 `;
 
 const CallInfo = styled.p`
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.7;
-  color: #cccccc;
+  color: #9ca3af;
   white-space: pre-line;
 `;
 

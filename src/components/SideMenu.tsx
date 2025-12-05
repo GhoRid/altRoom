@@ -45,7 +45,9 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
           </TopRow>
 
           <AuthRow>
-            <AuthItem>LOG IN</AuthItem>
+            <AuthItem onClick={() => handleClick("/auth/login")}>
+              LOG IN
+            </AuthItem>
             <AuthItem>SIGN UP</AuthItem>
           </AuthRow>
 

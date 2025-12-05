@@ -31,8 +31,8 @@ export default HeroSection;
 
 const Header = styled.h1`
   font-size: 1.25rem;
-  line-height: 1.75rem;
-  font-weight: 400;
+  line-height: 1.2rem;
+  font-weight: 300;
   margin-bottom: 1.5rem;
   color: #fff;
 `;
@@ -83,7 +83,7 @@ const MainText = styled.h2`
 const SubText = styled.p`
   margin-top: 60px;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 28px;
   color: #fff;
 

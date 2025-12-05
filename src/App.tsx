@@ -1,33 +1,47 @@
-import { BrowserRouter, Route, Routes } from "react-router";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router";
 import HomePage from "./pages/HomePage/HomePage";
 import MainLayout from "./layouts/MainLayout";
-// import RiumPage from "./pages/RiumPage/RiumPage";
-// import SeokwangPage from "./pages/SeokwangPage/SeokwangPage";
-// import ToTheTopPage from "./pages/ToTheTopPage/ToTheTopPage";
-// import SeokwangBooksPage from "./pages/SeokwangBooksPage/SeokwangBooksPage";
-// import CeoCooPage from "./pages/CeoCooPage/CeoCooPage";
-// import AboutUsPage from "./pages/AboutUsPage/AboutUsPage";
-// import EmploymentPage from "./pages/EmploymentPage/EmploymentPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import { ReactElement } from "react";
+
+const isAuthenticated = () => !!localStorage.getItem("accessToken");
+
+function RequireAuth({ children }: { children: ReactElement }) {
+  return <Navigate to="/auth/login" replace />;
+}
+
+function GuestOnly({ children }: { children: ReactElement }) {
+  if (isAuthenticated()) {
+    return <Navigate to="/" replace />;
+  }
+  return children;
+}
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<MainLayout />}>
-          <Route path="/" element={<HomePage />} />
-          {/* <Route path="/employment" element={<EmploymentPage />} />
-          <Route path="/about">
-            <Route path="ceo&coo" element={<CeoCooPage />} />
-            <Route path="aboutus" element={<AboutUsPage />} /> */}
-        </Route>
+          <Route
+            path="/auth/login"
+            element={
+              <GuestOnly>
+                <LoginPage />
+              </GuestOnly>
+            }
+          />
 
-        {/* <Route path="/brands">
-            <Route path="trvs_seokwang" element={<SeokwangPage />} />
-            <Route path="trvs_rium" element={<RiumPage />} />
-            <Route path="trvs_tothetop" element={<ToTheTopPage />} />
-            <Route path="trvs_seokwangbooks" element={<SeokwangBooksPage />} />
-          </Route> */}
-        {/* </Route> */}
+          <Route path="/" element={<HomePage />} />
+          <Route
+            element={
+              <RequireAuth>
+                <MainLayout />
+              </RequireAuth>
+            }
+          >
+            <Route path="/estimate" element={<HomePage />} />
+          </Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   );
