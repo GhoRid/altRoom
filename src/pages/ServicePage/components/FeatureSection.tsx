@@ -1,175 +1,119 @@
 import styled from "styled-components";
+import dataImageUrl from "../../../assets/images/service/data.png";
+import moduleImageUrl from "../../../assets/images/service/module.png";
+import constructionImageUrl from "../../../assets/images/service/construction.png";
 
 const FeatureSection = () => {
-  return (
-    <SectionWhite>
-      <SectionInner>
-        <SectionHeader>
-          <SectionKicker>알트룸만의 서비스 구성</SectionKicker>
-          <SectionTitle>공간 상담을 위한 모든 기능을 한 번에</SectionTitle>
-        </SectionHeader>
+  const list = [
+    {
+      eyebrow: "STANDARDIZED QUOTING SYSTEM",
+      headline: "표준화된 데이터로\n합리적인 견적시스템",
+      text: `빅데이터를 활용한 시공면적, 자재물량, 시공일수를 표준화하여 
+              폐자재와 인건비를 줄여
+              합리적인 비용을 제공합니다.`,
+      image: dataImageUrl,
+    },
+    {
+      eyebrow: "CONCEPT-BASED MODULAR DESIGN",
+      headline: "예산과 컨셉에 맞는\n디자인모듈 제공",
+      text: `체계화된 디자인 제조시스템으로 소비자의 예산과 컨셉에 가장 적합한
+              모듈로 구성해
+              최적의 트렌디한 디자인을 제공합니다.`,
+      image: moduleImageUrl,
+    },
+    {
+      eyebrow: "SYSTEMATIC CONSTRUCTION SYSTEM",
+      headline: "체계적인 디지털\n공사관리 시스템",
+      text: `디자인이 구현되는 시공 매뉴얼을 포함해 공정스케쥴, 시공관리, 
+      품질점검 등의 
+      공사의 전반적인 과정을 체계적으로 관리하며 마감품질을 높힐 수 있는
+    자체 프로그램을 사용하여 프로젝트의 만족도를 높입니다.`,
+      image: constructionImageUrl,
+    },
+  ];
 
-        <FeatureGrid>
-          <FeatureCard>
-            <FeatureTitle>견적 요청 &amp; 자동 산출</FeatureTitle>
-            <FeatureBody>
-              간단한 정보 입력만으로 초기 상담용 견적을 자동으로 산출하여
-              상담&nbsp;속도를 높입니다.
-            </FeatureBody>
-          </FeatureCard>
-          <FeatureCard>
-            <FeatureTitle>3D 시각화</FeatureTitle>
-            <FeatureBody>
-              공간 구조에 맞춘 3D 뷰로 마감재·컬러 조합을 미리 확인할 수 있어
-              시공 후 차이를 최소화합니다.
-            </FeatureBody>
-          </FeatureCard>
-          <FeatureCard>
-            <FeatureTitle>상담 기록 관리</FeatureTitle>
-            <FeatureBody>
-              상담 메모, 이미지, 견적 변경 이력이 자동으로 저장되어, 이후에도
-              동일한 내용으로 상담을 이어갈 수 있습니다.
-            </FeatureBody>
-          </FeatureCard>
-          <FeatureCard>
-            <FeatureTitle>샘플박스 연동</FeatureTitle>
-            <FeatureBody>
-              온라인에서 선택한 마감 옵션을 기준으로 샘플박스를 구성하여, 실제
-              질감과 컬러를 손쉽게 비교할 수 있습니다.
-            </FeatureBody>
-          </FeatureCard>
-          <FeatureCard>
-            <FeatureTitle>계약 및 일정 안내</FeatureTitle>
-            <FeatureBody>
-              확정된 견적과 공사 일정을 한눈에 볼 수 있는 온라인 계약서를
-              제공해, 불필요한 방문을 줄입니다.
-            </FeatureBody>
-          </FeatureCard>
-          <FeatureCard>
-            <FeatureTitle>사후 관리</FeatureTitle>
-            <FeatureBody>
-              시공 후 A/S 문의와 보수 내역까지 한 계정에서 관리할 수 있도록
-              고객센터와 연동되어 있습니다.
-            </FeatureBody>
-          </FeatureCard>
-        </FeatureGrid>
+  return (
+    <SectionWrapper>
+      <SectionInner>
+        {list.map((item, index) => (
+          <FeatureRow key={index}>
+            <FeatureCopy>
+              <FeatureEyebrow>{item.eyebrow}</FeatureEyebrow>
+              <FeatureHeadline>{item.headline}</FeatureHeadline>
+              <FeatureText>{item.text}</FeatureText>
+            </FeatureCopy>
+            <FeatureImageCard>
+              <FeatureImage src={item.image} alt={item.headline} />
+            </FeatureImageCard>
+          </FeatureRow>
+        ))}
       </SectionInner>
-    </SectionWhite>
+    </SectionWrapper>
   );
 };
 
 export default FeatureSection;
 
-const SectionHero = styled.section`
-  padding: 96px 16px 80px;
-  background: linear-gradient(135deg, #f5f7fb 0%, #ffffff 60%, #eef2ff 100%);
-`;
-
-const SectionWhite = styled.section`
+const SectionWrapper = styled.section`
   padding: 88px 16px;
   background-color: #ffffff;
-`;
-
-const SectionGray = styled.section`
-  padding: 88px 16px;
-  background-color: #f7f7f9;
-`;
-
-const SectionCTA = styled.section`
-  padding: 72px 16px 96px;
-  background: #111827;
-  color: #f9fafb;
 `;
 
 const SectionInner = styled.div`
   max-width: 1120px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
 `;
 
-const HeroInner = styled(SectionInner)`
+const FeatureRow = styled.div`
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-  gap: 56px;
   align-items: center;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
 
   @media (max-width: 960px) {
     grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
   }
 `;
 
-const HeroTextBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-`;
+const FeatureCopy = styled.div``;
 
-const HeroTag = styled.span`
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+const FeatureEyebrow = styled.div`
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  background: rgba(15, 23, 42, 0.04);
-  color: #4b5563;
-`;
-
-const HeroTitle = styled.h1`
-  font-size: 34px;
-  line-height: 1.25;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: #111827;
-
-  span {
-    color: #4f46e5;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 26px;
-  }
-`;
-
-const HeroDescription = styled.p`
-  font-size: 15px;
-  line-height: 1.8;
-  color: #4b5563;
-`;
-
-const HeroStats = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 8px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-`;
-
-const StatItem = styled.div`
-  padding: 12px 14px;
-  border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(148, 163, 184, 0.3);
-  backdrop-filter: blur(6px);
-`;
-
-const StatLabel = styled.div`
-  font-size: 11px;
   color: #6b7280;
-  margin-bottom: 4px;
+  margin-bottom: 12px;
 `;
 
-const StatValue = styled.div`
-  font-size: 13px;
-  font-weight: 600;
-  color: #111827;
+const FeatureHeadline = styled.h3`
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  /* letter-spacing: -0.03em; */
+  color: #000;
+  margin-top: 24px;
+  white-space: pre-line;
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
 `;
 
-const HeroVisual = styled.div`
+const FeatureText = styled.p`
+  font-size: 16px;
+  line-height: 26px;
+  color: #4b5563;
+  white-space: pre-line;
+
+  margin-top: 24px;
+`;
+
+const FeatureImageCard = styled.div`
   display: flex;
   justify-content: flex-end;
 
@@ -178,273 +122,12 @@ const HeroVisual = styled.div`
   }
 `;
 
-const HeroCard = styled.div`
-  max-width: 360px;
+const FeatureImage = styled.img`
   width: 100%;
-  padding: 20px 22px;
-  border-radius: 20px;
-  background: #111827;
-  color: #f9fafb;
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.35);
-`;
-
-const HeroCardTitle = styled.h2`
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 10px;
-`;
-
-const HeroCardBody = styled.p`
-  font-size: 13px;
-  line-height: 1.7;
-  color: #e5e7eb;
-`;
-
-const HeroPillRow = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 14px;
-`;
-
-const HeroPill = styled.span`
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 11px;
-  background: rgba(249, 250, 251, 0.08);
-  border: 1px solid rgba(249, 250, 251, 0.16);
-`;
-
-const SectionHeader = styled.div`
-  text-align: center;
-  margin-bottom: 40px;
-`;
-
-const SectionKicker = styled.div`
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #6b7280;
-  margin-bottom: 10px;
-`;
-
-const SectionTitle = styled.h2`
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: #111827;
-`;
-
-const SectionDescription = styled.p`
-  margin-top: 12px;
-  font-size: 14px;
-  line-height: 1.8;
-  color: #4b5563;
-`;
-
-const IntroGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 32px;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @media (max-width: 768px) {
-    grid-template-columns: minmax(0, 1fr);
-  }
-`;
-
-const IntroCard = styled.div`
-  padding: 24px 22px;
-  border-radius: 18px;
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
-`;
-
-const IntroLabel = styled.div`
-  font-size: 12px;
-  font-weight: 600;
-  color: #a1a1aa;
-  margin-bottom: 6px;
-`;
-
-const IntroTitle = styled.h3`
-  font-size: 16px;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 8px;
-`;
-
-const IntroBody = styled.p`
-  font-size: 13px;
-  line-height: 1.7;
-  color: #4b5563;
-  margin-bottom: 10px;
-`;
-
-const IntroList = styled.ul`
-  margin-top: 6px;
-  padding-left: 14px;
-
-  li {
-    font-size: 12px;
-    color: #6b7280;
-    line-height: 1.8;
-    list-style: disc;
-  }
-`;
-
-const FeatureGrid = styled.div`
-  margin-top: 32px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @media (max-width: 768px) {
-    grid-template-columns: minmax(0, 1fr);
-  }
-`;
-
-const FeatureCard = styled.div`
-  padding: 22px 20px;
-  border-radius: 16px;
-  border: 1px solid #e5e7eb;
-  background-color: #ffffff;
-`;
-
-const FeatureTitle = styled.h3`
-  font-size: 15px;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 8px;
-`;
-
-const FeatureBody = styled.p`
-  font-size: 13px;
-  line-height: 1.7;
-  color: #4b5563;
-`;
-
-const ProcessTimeline = styled.div`
-  margin-top: 36px;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @media (max-width: 640px) {
-    grid-template-columns: minmax(0, 1fr);
-  }
-`;
-
-const ProcessItem = styled.div`
-  position: relative;
-  padding: 22px 20px 20px;
-  border-radius: 18px;
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-`;
-
-const ProcessCircle = styled.div`
-  width: 26px;
-  height: 26px;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  font-weight: 600;
-  color: #4f46e5;
-  background: rgba(79, 70, 229, 0.08);
-  margin-bottom: 10px;
-`;
-
-const ProcessTitle = styled.h3`
-  font-size: 14px;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 6px;
-`;
-
-const ProcessBody = styled.p`
-  font-size: 13px;
-  line-height: 1.7;
-  color: #4b5563;
-`;
-
-const CTAInner = styled(SectionInner)`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-`;
-
-const CTATextBlock = styled.div`
-  max-width: 560px;
-`;
-
-const CTATitle = styled.h2`
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  margin-bottom: 10px;
-`;
-
-const CTABody = styled.p`
-  font-size: 14px;
-  line-height: 1.8;
-  color: #e5e7eb;
-`;
-
-const CTAButtons = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-`;
-
-const CTAButtonBase = styled.button`
-  border-radius: 999px;
-  padding: 10px 18px;
-  font-size: 13px;
-  font-weight: 500;
-  border: 1px solid transparent;
-  transition: background-color 0.18s ease, color 0.18s ease,
-    border-color 0.18s ease;
-`;
-
-const CTAButtonPrimary = styled(CTAButtonBase)`
-  background-color: #f97316;
-  border-color: #f97316;
-  color: #111827;
-
-  &:hover {
-    background-color: #fb923c;
-    border-color: #fb923c;
-  }
-`;
-
-const CTAButtonSecondary = styled(CTAButtonBase)`
-  background-color: transparent;
-  border-color: rgba(249, 250, 251, 0.4);
-  color: #f9fafb;
-
-  &:hover {
-    background-color: rgba(249, 250, 251, 0.06);
-  }
+  aspect-ratio: 16 / 9;
+  /* border-radius: 24px; */
+  background: #e5e7eb;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
 `;

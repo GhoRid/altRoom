@@ -12,8 +12,8 @@ const ServicePage = () => {
       <Content>
         <Title>서비스소개</Title>
         <HeroSection />
-        <IntroSection />
         <FeatureSection />
+        <IntroSection />
         <ProcessSection />
         <CTASection />
       </Content>
