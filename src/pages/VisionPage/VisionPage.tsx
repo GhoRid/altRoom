@@ -2,6 +2,7 @@ import styled from "styled-components";
 import HeroSection from "./components/HeroSection";
 import VisionImage from "../../assets/images/company/vision.png";
 import VisionCardSection from "./components/VisionCardSection";
+import CoreValuesSection from "../CompanyPage/Components/CoreValuesSection";
 
 const VisionPage = () => {
   return (
@@ -13,6 +14,7 @@ const VisionPage = () => {
       </ImageCard>
 
       <VisionCardSection />
+      <CoreValuesSection />
     </Wrapper>
   );
 };
@@ -21,7 +23,7 @@ export default VisionPage;
 
 const Wrapper = styled.div`
   max-width: 960px;
-  margin: 0 auto 80px;
+  margin: 0 auto 160px;
   display: flex;
   flex-direction: column;
   align-items: center;

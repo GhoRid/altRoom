@@ -42,7 +42,7 @@ export default VisionCardSection;
 
 const Section = styled.section`
   width: 100%;
-  padding: 96px 0 80px;
+  margin: 80px 0 0;
 `;
 
 const CardContainer = styled.div`
