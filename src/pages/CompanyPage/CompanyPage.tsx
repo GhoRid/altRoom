@@ -2,6 +2,7 @@ import styled from "styled-components";
 import IntroSection from "./Components/IntroSection";
 import StatsSection from "./Components/StatsSection";
 import CompanyImageSection from "./Components/CompanyImageSection";
+import VedioSection from "./Components/VedioSection";
 
 const CompanyPage = () => {
   return (
@@ -9,6 +10,7 @@ const CompanyPage = () => {
       <IntroSection />
       <StatsSection />
       <CompanyImageSection />
+      <VedioSection />
     </Wrapper>
   );
 };
