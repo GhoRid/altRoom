@@ -7,6 +7,7 @@ import ServicePage from "./pages/ServicePage/ServicePage";
 import CompanyPage from "./pages/CompanyPage/CompanyPage";
 import CompanyLayout from "./layouts/CompanyLayout";
 import CEOPage from "./pages/CEOPage/CEOPage";
+import VisionPage from "./pages/VisionPage/VisionPage";
 
 const isAuthenticated = () => !!localStorage.getItem("accessToken");
 
@@ -42,6 +43,7 @@ function App() {
             <Route path="/company">
               <Route path="" element={<CompanyPage />} />
               <Route path="ceo" element={<CEOPage />} />
+              <Route path="vision" element={<VisionPage />} />
             </Route>
           </Route>
 
