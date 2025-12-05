@@ -4,6 +4,8 @@ import MainLayout from "./layouts/MainLayout";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import { ReactElement } from "react";
 import ServicePage from "./pages/ServicePage/ServicePage";
+import CompanyPage from "./pages/CompanyPage/CompanyPage";
+import CompanyLayout from "./layouts/CompanyLayout";
 
 const isAuthenticated = () => !!localStorage.getItem("accessToken");
 
@@ -34,6 +36,14 @@ function App() {
 
           <Route path="/" element={<HomePage />} />
           <Route path="/service" element={<ServicePage />} />
+
+          <Route element={<CompanyLayout />}>
+            <Route path="/company">
+              <Route path="" element={<CompanyPage />} />
+              <Route path="ceo" element={<CompanyPage />} />
+            </Route>
+          </Route>
+
           <Route
             element={
               <RequireAuth>
