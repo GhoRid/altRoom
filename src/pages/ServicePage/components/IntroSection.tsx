@@ -2,6 +2,7 @@ import styled from "styled-components";
 import realTimeQuoteImageUrl from "../../../assets/images/service/realTimeQuote.png";
 import nonFaceConsultationImageUrl from "../../../assets/images/service/nonFaceConsultation.png";
 import sampleBoxImageUrl from "../../../assets/images/service/sampleBox.png";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const CARD_LIST = [
   {
@@ -34,40 +35,46 @@ const IntroSection = () => {
   return (
     <SectionWapper>
       <SectionInner>
-        <SectionHeader>
-          <SectionTitle>
-            견적부터 3D상담, 자재확인까지
-            <br />
-            모두 다 온라인으로 가능할까?
-          </SectionTitle>
-          <SectionDescription>
-            알트룸은 실시간 견적시스템과 비대면 3D상담 서비스, 샘플박스 배송
-            서비스로
-            <br />
-            상담과정의 모든 부분을 온라인을 통해 서비스 받으실 수 있습니다.
-          </SectionDescription>
-        </SectionHeader>
+        <FadeInUpOnView threshold={0.5} duration={0.7}>
+          <SectionHeader>
+            <SectionTitle>
+              견적부터 3D상담, 자재확인까지
+              <br />
+              모두 다 온라인으로 가능할까?
+            </SectionTitle>
+            <SectionDescription>
+              알트룸은 실시간 견적시스템과 비대면 3D상담 서비스, 샘플박스 배송
+              서비스로
+              <br />
+              상담과정의 모든 부분을 온라인을 통해 서비스 받으실 수 있습니다.
+            </SectionDescription>
+          </SectionHeader>
+        </FadeInUpOnView>
 
-        <IntroGrid>
-          {CARD_LIST.map((card) => (
-            <IntroCard key={card.id}>
-              <ImageCard>
-                <img src={card.imageSrc} alt={card.imageAlt} />
-              </ImageCard>
-              <IntroContent>
-                <IntroNumberTitle>
-                  {card.id}. {card.title}
-                </IntroNumberTitle>
-                <IntroBody>{card.description}</IntroBody>
-              </IntroContent>
-            </IntroCard>
-          ))}
-        </IntroGrid>
+        <FadeInUpOnView threshold={0.5} duration={0.7}>
+          <IntroGrid>
+            {CARD_LIST.map((card) => (
+              <IntroCard key={card.id}>
+                <ImageCard>
+                  <img src={card.imageSrc} alt={card.imageAlt} />
+                </ImageCard>
+                <IntroContent>
+                  <IntroNumberTitle>
+                    {card.id}. {card.title}
+                  </IntroNumberTitle>
+                  <IntroBody>{card.description}</IntroBody>
+                </IntroContent>
+              </IntroCard>
+            ))}
+          </IntroGrid>
+        </FadeInUpOnView>
 
-        <IntroFooter>
-          체계적이고 메뉴얼화된 서비스로 고객님들에게 편리성과 전문성을
-          제공하겠습니다.
-        </IntroFooter>
+        <FadeInUpOnView threshold={0.5} duration={0.7}>
+          <IntroFooter>
+            체계적이고 메뉴얼화된 서비스로 고객님들에게 편리성과 전문성을
+            제공하겠습니다.
+          </IntroFooter>
+        </FadeInUpOnView>
       </SectionInner>
     </SectionWapper>
   );

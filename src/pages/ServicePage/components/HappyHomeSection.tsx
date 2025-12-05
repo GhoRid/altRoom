@@ -2,37 +2,40 @@ import styled from "styled-components";
 import meetingImageUrl from "../../../assets/images/service/meeting.png";
 import personImageUrl from "../../../assets/images/service/person.png";
 import { colors } from "../../../styles/color";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const HappyHomeSection = () => {
   return (
     <SectionWrapper>
-      <SectionInner>
-        <Title>당신도 지금, 나만의 행복한 집을 원하시나요?</Title>
+      <FadeInUpOnView threshold={0.5} duration={0.7}>
+        <SectionInner>
+          <Title>당신도 지금, 나만의 행복한 집을 원하시나요?</Title>
 
-        <ParagraphGroup>
-          <Paragraph>
-            도면, 자재, 시공업체, 견적비교 등등 알아볼게 뭐 그리 많은지…..
-            <br />
-            이것저것 따지다보면 일주일이 훌쩍 가버리더라구요.
-            <br />
-            <br />
-            그런데 이제 시간낭비 할 이유가 사라졌어요!
-            <br />
-            알트룸에서는 내가 원하는 예산으로 인테리어를 선택할 수 있어요.
-          </Paragraph>
-        </ParagraphGroup>
+          <ParagraphGroup>
+            <Paragraph>
+              도면, 자재, 시공업체, 견적비교 등등 알아볼게 뭐 그리 많은지…..
+              <br />
+              이것저것 따지다보면 일주일이 훌쩍 가버리더라구요.
+              <br />
+              <br />
+              그런데 이제 시간낭비 할 이유가 사라졌어요!
+              <br />
+              알트룸에서는 내가 원하는 예산으로 인테리어를 선택할 수 있어요.
+            </Paragraph>
+          </ParagraphGroup>
 
-        <HighlightText>언제, 어디서든, 편리하고, 정확한 시스템</HighlightText>
+          <HighlightText>언제, 어디서든, 편리하고, 정확한 시스템</HighlightText>
 
-        <ImageGrid>
-          <ImageCard>
-            <img src={meetingImageUrl} alt="알트룸 상담 이미지" />
-          </ImageCard>
-          <ImageCard>
-            <img src={personImageUrl} alt="현장 시공 이미지" />
-          </ImageCard>
-        </ImageGrid>
-      </SectionInner>
+          <ImageGrid>
+            <ImageCard>
+              <img src={meetingImageUrl} alt="알트룸 상담 이미지" />
+            </ImageCard>
+            <ImageCard>
+              <img src={personImageUrl} alt="현장 시공 이미지" />
+            </ImageCard>
+          </ImageGrid>
+        </SectionInner>
+      </FadeInUpOnView>
     </SectionWrapper>
   );
 };

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useEffect, useRef, useState } from "react";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const STEPS = [
   {
@@ -72,9 +73,11 @@ const ProcessSection = () => {
   return (
     <SectionGray ref={sectionRef}>
       <SectionInner>
-        <SectionHeader>
-          <SectionTitle>알트룸 진행 프로세스</SectionTitle>
-        </SectionHeader>
+        <FadeInUpOnView threshold={0.5} duration={0.7}>
+          <SectionHeader>
+            <SectionTitle>알트룸 진행 프로세스</SectionTitle>
+          </SectionHeader>
+        </FadeInUpOnView>
 
         <ProcessTimeline>
           {STEPS.map((item, index) => (

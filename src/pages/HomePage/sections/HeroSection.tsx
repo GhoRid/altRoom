@@ -5,7 +5,7 @@ const HeroSection = () => {
   return (
     <Wrapper>
       <Content>
-        <FadeInUpOnView transitionHeight={40}>
+        <FadeInUpOnView delay={0.2} transitionHeight={40}>
           <Header>MODULE SPACE COMPANY</Header>
           <MainText>
             당신을 위한

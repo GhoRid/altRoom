@@ -1,28 +1,31 @@
 import styled from "styled-components";
 import imageUrl from "../../../assets/images/service/heroImage.webp";
 import { colors } from "../../../styles/color";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const HeroSection = () => {
   return (
     <SectionHero>
-      <HeroInner>
-        <HeroImageCard>
-          <HeroImage src={imageUrl} />
-        </HeroImageCard>
+      <FadeInUpOnView duration={0.7}>
+        <HeroInner>
+          <HeroImageCard>
+            <HeroImage src={imageUrl} />
+          </HeroImageCard>
 
-        <HeroTextBlock>
-          <HeroMainTitle>
-            비용은 낮추며 품질은 높이는
-            <br />
-            알트룸 디자인 모듈 시스템
-          </HeroMainTitle>
+          <HeroTextBlock>
+            <HeroMainTitle>
+              비용은 낮추며 품질은 높이는
+              <br />
+              알트룸 디자인 모듈 시스템
+            </HeroMainTitle>
 
-          <HeroSubTitle>우리 가족의 유일한 쉼터인 우리 집,</HeroSubTitle>
-          <HeroCaption>누구한테 맡길 수 있을까요?</HeroCaption>
+            <HeroSubTitle>우리 가족의 유일한 쉼터인 우리 집,</HeroSubTitle>
+            <HeroCaption>누구한테 맡길 수 있을까요?</HeroCaption>
 
-          <HeroDivider />
-        </HeroTextBlock>
-      </HeroInner>
+            <HeroDivider />
+          </HeroTextBlock>
+        </HeroInner>
+      </FadeInUpOnView>
     </SectionHero>
   );
 };

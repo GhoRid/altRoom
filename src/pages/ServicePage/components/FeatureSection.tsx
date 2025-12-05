@@ -2,6 +2,7 @@ import styled from "styled-components";
 import dataImageUrl from "../../../assets/images/service/data.png";
 import moduleImageUrl from "../../../assets/images/service/module.png";
 import constructionImageUrl from "../../../assets/images/service/construction.png";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const FeatureSection = () => {
   const list = [
@@ -36,16 +37,18 @@ const FeatureSection = () => {
     <SectionWrapper>
       <SectionInner>
         {list.map((item, index) => (
-          <FeatureRow key={index}>
-            <FeatureCopy>
-              <FeatureEyebrow>{item.eyebrow}</FeatureEyebrow>
-              <FeatureHeadline>{item.headline}</FeatureHeadline>
-              <FeatureText>{item.text}</FeatureText>
-            </FeatureCopy>
-            <FeatureImageCard>
-              <FeatureImage src={item.image} alt={item.headline} />
-            </FeatureImageCard>
-          </FeatureRow>
+          <FadeInUpOnView duration={0.7}>
+            <FeatureRow key={index}>
+              <FeatureCopy>
+                <FeatureEyebrow>{item.eyebrow}</FeatureEyebrow>
+                <FeatureHeadline>{item.headline}</FeatureHeadline>
+                <FeatureText>{item.text}</FeatureText>
+              </FeatureCopy>
+              <FeatureImageCard>
+                <FeatureImage src={item.image} alt={item.headline} />
+              </FeatureImageCard>
+            </FeatureRow>
+          </FadeInUpOnView>
         ))}
       </SectionInner>
     </SectionWrapper>
