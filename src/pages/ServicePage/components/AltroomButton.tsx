@@ -43,7 +43,7 @@ const AltroomButton = () => {
 
   return (
     <StyledLink ref={buttonRef} to="/estimate" $isVisible={isVisible}>
-      <p>start ALT ROOM</p>
+      <p>Start ALT ROOM</p>
     </StyledLink>
   );
 };

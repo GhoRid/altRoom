@@ -43,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: inherit;
+    color: inherit
   }
 
   ul, ol {
