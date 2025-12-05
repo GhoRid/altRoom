@@ -1,47 +1,93 @@
 import styled from "styled-components";
+import { useEffect, useRef, useState } from "react";
+
+const STEPS = [
+  {
+    step: 1,
+    title: "온라인 견적내기",
+    description:
+      "온라인 견적하기를 통해 공사의 기본정보를 입력하고 맞는 품목을 선택해 가격견적을 미리 받아요.",
+  },
+  {
+    step: 2,
+    title: "3D 상담",
+    description:
+      "온라인 견적내기를 통해 예약한 날짜와 시간에 상담을 진행하며 담당 어드바이저와 우리집에 적용될 디자인을 3D로 상담 받아요.",
+  },
+  {
+    step: 3,
+    title: "현장 점검",
+    description:
+      "3D디자인과 견적을 확인 한 뒤 상담받은 디자이너의 현장 적용여부와 컨디션 체크를 위해 현장을 방문해요.",
+  },
+  {
+    step: 4,
+    title: "계약 미팅",
+    description:
+      "담당 어드바이저를 통해 전자계약을 완료하고 마이하우스 매니저앱을 통해 공사진행 정보를 제공 받습니다.",
+  },
+  {
+    step: 5,
+    title: "시공시작",
+    description:
+      "매니저앱을 통해 우리집 3D 미리보기, 사용자재, 공사일정, 시공현황 등을 실시간으로 확인하고 소통할 수 있습니다.",
+  },
+  {
+    step: 6,
+    title: "최종 점검",
+    description:
+      "공사 완료일 전 담당 어드바이저와 함께 공사의 전반적인 시공품질과 상태를 점검하고 잔금결제가 이뤄집니다.",
+  },
+  {
+    step: 7,
+    title: "A/S",
+    description:
+      "인테리어 하자 보증서를 발급해 드리고, 온라인 신청 서비스를 통해 간단하게 A/S를 신청할 수 있습니다.",
+  },
+];
 
 const ProcessSection = () => {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.8 }
+    );
+
+    observer.observe(el);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <SectionGray>
+    <SectionGray ref={sectionRef}>
       <SectionInner>
         <SectionHeader>
-          <SectionKicker>이용 절차</SectionKicker>
-          <SectionTitle>알트룸 서비스 진행 단계</SectionTitle>
+          <SectionTitle>알트룸 진행 프로세스</SectionTitle>
         </SectionHeader>
 
         <ProcessTimeline>
-          <ProcessItem>
-            <ProcessCircle>1</ProcessCircle>
-            <ProcessTitle>온라인 자동 견적</ProcessTitle>
-            <ProcessBody>
-              공간 정보와 희망 공사 범위를 입력하면 실시간으로 대략적인 견적을
-              확인합니다.
-            </ProcessBody>
-          </ProcessItem>
-          <ProcessItem>
-            <ProcessCircle>2</ProcessCircle>
-            <ProcessTitle>비대면 3D 상담</ProcessTitle>
-            <ProcessBody>
-              전문 상담 매니저와 함께 3D 화면을 보며 마감 재와 옵션을 조정하고
-              최종안을 논의합니다.
-            </ProcessBody>
-          </ProcessItem>
-          <ProcessItem>
-            <ProcessCircle>3</ProcessCircle>
-            <ProcessTitle>샘플박스 수령</ProcessTitle>
-            <ProcessBody>
-              상담에서 결정한 마감 재질을 샘플박스로 받아 실제 공간의
-              조명&nbsp;환경에서 비교해 봅니다.
-            </ProcessBody>
-          </ProcessItem>
-          <ProcessItem>
-            <ProcessCircle>4</ProcessCircle>
-            <ProcessTitle>계약 및 시공 진행</ProcessTitle>
-            <ProcessBody>
-              최종 견적과 시공 일정을 온라인으로 확정하고, 현장 시공까지
-              순차적으로 진행됩니다.
-            </ProcessBody>
-          </ProcessItem>
+          {STEPS.map((item, index) => (
+            <ProcessItem
+              key={item.step}
+              $visible={isVisible}
+              $delay={index * 0.08}
+            >
+              <StepBadge>Step. {item.step}</StepBadge>
+              <ProcessTitle>{item.title}</ProcessTitle>
+              <ProcessBody>{item.description}</ProcessBody>
+            </ProcessItem>
+          ))}
         </ProcessTimeline>
       </SectionInner>
     </SectionGray>
@@ -50,25 +96,11 @@ const ProcessSection = () => {
 
 export default ProcessSection;
 
-const SectionHero = styled.section`
-  padding: 96px 16px 80px;
-  background: linear-gradient(135deg, #f5f7fb 0%, #ffffff 60%, #eef2ff 100%);
-`;
-
-const SectionWhite = styled.section`
-  padding: 88px 16px;
-  background-color: #ffffff;
-`;
+/* 공통 섹션 스타일 */
 
 const SectionGray = styled.section`
-  padding: 88px 16px;
-  background-color: #f7f7f9;
-`;
-
-const SectionCTA = styled.section`
-  padding: 72px 16px 96px;
-  background: #111827;
-  color: #f9fafb;
+  padding: 96px 16px 96px;
+  background-color: #ffffff;
 `;
 
 const SectionInner = styled.div`
@@ -76,365 +108,81 @@ const SectionInner = styled.div`
   margin: 0 auto;
 `;
 
-const HeroInner = styled(SectionInner)`
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-  gap: 56px;
-  align-items: center;
-
-  @media (max-width: 960px) {
-    grid-template-columns: minmax(0, 1fr);
-  }
-`;
-
-const HeroTextBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-`;
-
-const HeroTag = styled.span`
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  background: rgba(15, 23, 42, 0.04);
-  color: #4b5563;
-`;
-
-const HeroTitle = styled.h1`
-  font-size: 34px;
-  line-height: 1.25;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: #111827;
-
-  span {
-    color: #4f46e5;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 26px;
-  }
-`;
-
-const HeroDescription = styled.p`
-  font-size: 15px;
-  line-height: 1.8;
-  color: #4b5563;
-`;
-
-const HeroStats = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 8px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-`;
-
-const StatItem = styled.div`
-  padding: 12px 14px;
-  border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(148, 163, 184, 0.3);
-  backdrop-filter: blur(6px);
-`;
-
-const StatLabel = styled.div`
-  font-size: 11px;
-  color: #6b7280;
-  margin-bottom: 4px;
-`;
-
-const StatValue = styled.div`
-  font-size: 13px;
-  font-weight: 600;
-  color: #111827;
-`;
-
-const HeroVisual = styled.div`
-  display: flex;
-  justify-content: flex-end;
-
-  @media (max-width: 960px) {
-    justify-content: flex-start;
-  }
-`;
-
-const HeroCard = styled.div`
-  max-width: 360px;
-  width: 100%;
-  padding: 20px 22px;
-  border-radius: 20px;
-  background: #111827;
-  color: #f9fafb;
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.35);
-`;
-
-const HeroCardTitle = styled.h2`
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 10px;
-`;
-
-const HeroCardBody = styled.p`
-  font-size: 13px;
-  line-height: 1.7;
-  color: #e5e7eb;
-`;
-
-const HeroPillRow = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 14px;
-`;
-
-const HeroPill = styled.span`
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 11px;
-  background: rgba(249, 250, 251, 0.08);
-  border: 1px solid rgba(249, 250, 251, 0.16);
-`;
-
 const SectionHeader = styled.div`
   text-align: center;
-  margin-bottom: 40px;
-`;
-
-const SectionKicker = styled.div`
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #6b7280;
-  margin-bottom: 10px;
+  margin-bottom: 48px;
 `;
 
 const SectionTitle = styled.h2`
-  font-size: 24px;
+  font-size: 36px;
   font-weight: 700;
-  letter-spacing: -0.02em;
-  color: #111827;
-`;
-
-const SectionDescription = styled.p`
-  margin-top: 12px;
-  font-size: 14px;
-  line-height: 1.8;
-  color: #4b5563;
-`;
-
-const IntroGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 32px;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 
   @media (max-width: 768px) {
-    grid-template-columns: minmax(0, 1fr);
+    font-size: 24px;
   }
 `;
 
-const IntroCard = styled.div`
-  padding: 24px 22px;
-  border-radius: 18px;
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
-`;
-
-const IntroLabel = styled.div`
-  font-size: 12px;
-  font-weight: 600;
-  color: #a1a1aa;
-  margin-bottom: 6px;
-`;
-
-const IntroTitle = styled.h3`
-  font-size: 16px;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 8px;
-`;
-
-const IntroBody = styled.p`
-  font-size: 13px;
-  line-height: 1.7;
-  color: #4b5563;
-  margin-bottom: 10px;
-`;
-
-const IntroList = styled.ul`
-  margin-top: 6px;
-  padding-left: 14px;
-
-  li {
-    font-size: 12px;
-    color: #6b7280;
-    line-height: 1.8;
-    list-style: disc;
-  }
-`;
-
-const FeatureGrid = styled.div`
-  margin-top: 32px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @media (max-width: 768px) {
-    grid-template-columns: minmax(0, 1fr);
-  }
-`;
-
-const FeatureCard = styled.div`
-  padding: 22px 20px;
-  border-radius: 16px;
-  border: 1px solid #e5e7eb;
-  background-color: #ffffff;
-`;
-
-const FeatureTitle = styled.h3`
-  font-size: 15px;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 8px;
-`;
-
-const FeatureBody = styled.p`
-  font-size: 13px;
-  line-height: 1.7;
-  color: #4b5563;
-`;
+/* 프로세스 카드 그리드 */
 
 const ProcessTimeline = styled.div`
-  margin-top: 36px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
 
   @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media (max-width: 768px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 540px) {
     grid-template-columns: minmax(0, 1fr);
   }
 `;
 
-const ProcessItem = styled.div`
+const ProcessItem = styled.div<{ $visible: boolean; $delay: number }>`
   position: relative;
-  padding: 22px 20px 20px;
+  padding: 24px;
   border-radius: 18px;
   background-color: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #f2e9df;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  text-align: center;
+
+  opacity: ${({ $visible }) => ($visible ? 1 : 0)};
+  transform: ${({ $visible }) =>
+    $visible ? "translateY(0)" : "translateY(24px)"};
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: ${({ $delay }) => `${$delay}s`};
 `;
 
-const ProcessCircle = styled.div`
-  width: 26px;
-  height: 26px;
-  border-radius: 999px;
-  display: flex;
+const StepBadge = styled.div`
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 12px;
   font-weight: 600;
-  color: #4f46e5;
-  background: rgba(79, 70, 229, 0.08);
-  margin-bottom: 10px;
+  color: #8b5a2b;
+  background-color: #fff3e3;
+  margin-bottom: 20px;
 `;
 
 const ProcessTitle = styled.h3`
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
   color: #111827;
-  margin-bottom: 6px;
+  margin-bottom: 16px;
 `;
 
 const ProcessBody = styled.p`
   font-size: 13px;
-  line-height: 1.7;
+  line-height: 1.9;
   color: #4b5563;
 `;
 
-const CTAInner = styled(SectionInner)`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-`;
-
-const CTATextBlock = styled.div`
-  max-width: 560px;
-`;
-
-const CTATitle = styled.h2`
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  margin-bottom: 10px;
-`;
-
-const CTABody = styled.p`
-  font-size: 14px;
-  line-height: 1.8;
-  color: #e5e7eb;
-`;
-
-const CTAButtons = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-`;
-
-const CTAButtonBase = styled.button`
-  border-radius: 999px;
-  padding: 10px 18px;
-  font-size: 13px;
-  font-weight: 500;
-  border: 1px solid transparent;
-  transition: background-color 0.18s ease, color 0.18s ease,
-    border-color 0.18s ease;
-`;
-
-const CTAButtonPrimary = styled(CTAButtonBase)`
-  background-color: #f97316;
-  border-color: #f97316;
-  color: #111827;
-
-  &:hover {
-    background-color: #fb923c;
-    border-color: #fb923c;
-  }
-`;
-
-const CTAButtonSecondary = styled(CTAButtonBase)`
-  background-color: transparent;
-  border-color: rgba(249, 250, 251, 0.4);
-  color: #f9fafb;
-
-  &:hover {
-    background-color: rgba(249, 250, 251, 0.06);
-  }
-`;
+/* 아래쪽에 기존에 쓰이던 Hero / Intro / Feature / CTA 관련 styled 들이 있으면
+   안 쓰이는 건 지워도 되고, 그냥 두어도 동작에는 문제 없음 */

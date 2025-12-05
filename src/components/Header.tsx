@@ -57,7 +57,9 @@ const Header = () => {
           window.scrollTo({ top: 0, behavior: "smooth" });
         }}
       >
-        <AltRommTextLogo />
+        <LogoBox>
+          <AltRommTextLogo />
+        </LogoBox>
       </CenterButton>
       <Right>
         <CartButton
@@ -164,6 +166,11 @@ const CenterButton = styled.button`
     width: auto;
     display: block;
   }
+`;
+const LogoBox = styled.div`
+  width: 100%;
+  height: 100%;
+  margin-top: 1px;
 `;
 
 const Right = styled.div`

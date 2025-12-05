@@ -16,13 +16,16 @@ const Wrapper = styled.div<{
   $isVisible: boolean;
   $duration: number;
   $transitionHeight: number;
+  $delay: number;
 }>`
   opacity: 0;
   transform: translateY(${({ $transitionHeight }) => $transitionHeight}px);
-  ${({ $isVisible, $duration, $transitionHeight }) =>
+  ${({ $isVisible, $duration, $transitionHeight, $delay }) =>
     $isVisible &&
     css`
-      animation: ${fadeInUp($transitionHeight)} ${$duration}s linear forwards;
+      animation: ${fadeInUp($transitionHeight)} ${$duration}s
+        cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      animation-delay: ${$delay}s;
     `}
 `;
 
@@ -31,6 +34,7 @@ type FadeInUpOnViewProps = {
   threshold?: number;
   duration?: number; // 초 단위
   transitionHeight?: number;
+  delay?: number;
 };
 
 const FadeInUpOnView = ({
@@ -38,6 +42,7 @@ const FadeInUpOnView = ({
   threshold = 1,
   duration = 0.8,
   transitionHeight = 20,
+  delay = 0.2,
 }: FadeInUpOnViewProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -63,6 +68,7 @@ const FadeInUpOnView = ({
       $isVisible={isVisible}
       $duration={duration}
       $transitionHeight={transitionHeight}
+      $delay={delay}
     >
       {children}
     </Wrapper>

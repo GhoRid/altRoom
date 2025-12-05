@@ -147,10 +147,6 @@ const IntroNumberTitle = styled.h3`
   line-height: 28px;
   font-weight: 700;
   margin-top: 16px;
-  /* 
-  .number {
-    margin-right: 4px;
-  } */
 `;
 
 const IntroBody = styled.p`

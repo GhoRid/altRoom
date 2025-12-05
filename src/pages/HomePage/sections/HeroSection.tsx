@@ -29,14 +29,6 @@ const HeroSection = () => {
 
 export default HeroSection;
 
-const Header = styled.h1`
-  font-size: 1.25rem;
-  line-height: 1.2rem;
-  font-weight: 300;
-  margin-bottom: 1.5rem;
-  color: #fff;
-`;
-
 const Wrapper = styled.section`
   position: relative;
   width: 100%;
@@ -60,16 +52,30 @@ const Wrapper = styled.section`
 
 const Content = styled.div`
   position: relative;
-  z-index: 10;
   text-align: center;
+  z-index: 10;
   padding: 0 16px;
+`;
+
+const Header = styled.h1`
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  line-height: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  color: #fff;
+
+  margin: 16px 0 24px 0;
 `;
 
 const MainText = styled.h2`
   font-size: 72px;
-  font-weight: 700;
   line-height: 1.375;
+  font-weight: 700;
+  letter-spacing: 3.6px;
   color: #fff;
+
+  margin-bottom: 64px;
 
   @media (max-width: 768px) {
     font-size: 50px;
@@ -81,10 +87,11 @@ const MainText = styled.h2`
 `;
 
 const SubText = styled.p`
-  margin-top: 60px;
+  /* margin-top: 40px; */
   font-size: 20px;
-  font-weight: 300;
   line-height: 28px;
+  letter-spacing: 0.5px;
+  font-weight: 300;
   color: #fff;
 
   .br-mobile {
@@ -112,7 +119,7 @@ const SubText = styled.p`
 const ButtonRow = styled.div`
   margin-top: 50px;
   display: flex;
-  gap: 24px;
+  gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
 
@@ -126,7 +133,7 @@ const BaseButton = styled.button`
   padding: 16px 24px;
   border-radius: 999px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;

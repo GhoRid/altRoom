@@ -2,8 +2,9 @@ import styled from "styled-components";
 import HeroSection from "./components/HeroSection";
 import IntroSection from "./components/IntroSection";
 import FeatureSection from "./components/FeatureSection";
+import HappyHomeSection from "./components/HappyHomeSection";
 import ProcessSection from "./components/ProcessSection";
-import CTASection from "./components/CTASection";
+import AltroomButton from "./components/AltroomButton";
 
 const ServicePage = () => {
   return (
@@ -13,8 +14,9 @@ const ServicePage = () => {
         <HeroSection />
         <FeatureSection />
         <IntroSection />
+        <HappyHomeSection />
         <ProcessSection />
-        <CTASection />
+        <AltroomButton />
       </Content>
     </PageWrapper>
   );
