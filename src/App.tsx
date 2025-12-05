@@ -6,6 +6,7 @@ import { ReactElement } from "react";
 import ServicePage from "./pages/ServicePage/ServicePage";
 import CompanyPage from "./pages/CompanyPage/CompanyPage";
 import CompanyLayout from "./layouts/CompanyLayout";
+import CEOPage from "./pages/CEOPage/CEOPage";
 
 const isAuthenticated = () => !!localStorage.getItem("accessToken");
 
@@ -40,7 +41,7 @@ function App() {
           <Route element={<CompanyLayout />}>
             <Route path="/company">
               <Route path="" element={<CompanyPage />} />
-              <Route path="ceo" element={<CompanyPage />} />
+              <Route path="ceo" element={<CEOPage />} />
             </Route>
           </Route>
 
