@@ -26,7 +26,7 @@ const groupItemsByRow = (items: TimelineItem[]): TimelineItem[][] => {
 };
 
 // 여기서 타임라인 데이터만 수정해서 쓰면 됨
-const TIMELINE: TimelineYearBlock[] = [
+const TIMELINE_2020_now: TimelineYearBlock[] = [
   {
     year: 2025,
     items: [{ id: 1, month: "01", text: "벤처기업인증 획득", side: "left" }],
@@ -85,16 +85,104 @@ const TIMELINE: TimelineYearBlock[] = [
       },
     ],
   },
+  {
+    year: 2022,
+    items: [
+      {
+        id: 10,
+        month: "08",
+        text: "08 Asia Design Award residence 수상",
+        side: "left",
+      },
+    ],
+  },
+  {
+    year: 2021,
+    items: [
+      {
+        id: 11,
+        month: "02",
+        text: "02 ㈜비율 법인설립",
+        side: "left",
+      },
+    ],
+  },
+  {
+    year: 2020,
+    items: [
+      {
+        id: 12,
+        month: "01",
+        text: "01 한국실내건축가협회 회원사",
+        side: "left",
+      },
+    ],
+  },
 ];
 
-const allTimelineItems = TIMELINE.flatMap((block) => block.items);
-const idOrderMap: Record<number, number> = allTimelineItems
-  .slice()
-  .sort((a, b) => a.id - b.id)
-  .reduce((acc, item, index) => {
-    acc[item.id] = index;
-    return acc;
-  }, {} as Record<number, number>);
+const TIMELINE_2015_2020: TimelineYearBlock[] = [
+  {
+    year: 2019,
+    items: [
+      {
+        id: 101,
+        month: "03",
+        text: "03 종합건설 설립",
+        side: "left",
+      },
+    ],
+  },
+  {
+    year: 2018,
+    items: [
+      {
+        id: 102,
+        month: "02",
+        text: "02 건축설계사업, 건설사업 확장",
+        side: "left",
+      },
+    ],
+  },
+  {
+    year: 2017,
+    items: [
+      {
+        id: 103,
+        month: "07",
+        text: "07 KOSID 전문건설협회 회원사",
+        side: "left",
+      },
+    ],
+  },
+  {
+    year: 2016,
+    items: [
+      {
+        id: 104,
+        month: "05",
+        text: "05 광주광역시 본사 설립",
+        side: "left",
+      },
+      {
+        id: 105,
+        month: "09",
+        text: "09 실내건축면허 등록",
+        side: "right",
+      },
+    ],
+  },
+  {
+    year: 2015,
+    items: [
+      {
+        id: 106,
+        month: "03",
+        text: "03 공간디자인 사업개시",
+        side: "left",
+      },
+    ],
+  },
+];
 
 // 스크롤로 화면에 보이면 true가 되는 훅
 const useFadeInOnView = (threshold = 0.1) => {
@@ -124,40 +212,54 @@ const useFadeInOnView = (threshold = 0.1) => {
   return { ref, isInView };
 };
 
+type YearBlockProps = {
+  block: TimelineYearBlock;
+};
+
+const YearBlock = ({ block }: YearBlockProps) => {
+  const { ref, isInView } = useFadeInOnView(0.8);
+  const rows = groupItemsByRow(block.items);
+
+  return (
+    <YearBlockContainer ref={ref} $isVisible={isInView}>
+      <YearBadge>{block.year}</YearBadge>
+
+      {rows.map((row, rowIndex) => (
+        <TimelineRow key={`${block.year}-row-${rowIndex}`}>
+          <Dot />
+          {row.map((item, colIndex) => {
+            const side: Side = colIndex === 0 ? "left" : "right";
+            return (
+              <ItemCard
+                key={`${block.year}-${item.month}-${item.id}`}
+                month={item.month}
+                text={item.text}
+                side={side}
+              />
+            );
+          })}
+        </TimelineRow>
+      ))}
+    </YearBlockContainer>
+  );
+};
+
 const HistoryTimelineSection = () => {
   return (
     <Section>
       <SectionTitle>2020 ~ 현재</SectionTitle>
 
       <TimelineWrapper>
-        {TIMELINE.map((block) => {
-          const rows = groupItemsByRow(block.items);
+        {TIMELINE_2020_now.map((block) => (
+          <YearBlock key={block.year} block={block} />
+        ))}
+      </TimelineWrapper>
 
-          return (
-            <YearBlock key={block.year}>
-              <YearBadge>{block.year}</YearBadge>
-
-              {rows.map((row, rowIndex) => (
-                <TimelineRow key={`${block.year}-row-${rowIndex}`}>
-                  <Dot />
-                  {row.map((item, colIndex) => {
-                    const side: Side = colIndex === 0 ? "left" : "right";
-                    const order = idOrderMap[item.id] ?? 0;
-                    return (
-                      <ItemCard
-                        key={`${block.year}-${item.month}-${order}`}
-                        month={item.month}
-                        text={item.text}
-                        side={side}
-                        order={order}
-                      />
-                    );
-                  })}
-                </TimelineRow>
-              ))}
-            </YearBlock>
-          );
-        })}
+      <SectionTitle>2015 ~ 2020</SectionTitle>
+      <TimelineWrapper>
+        {TIMELINE_2015_2020.map((block) => (
+          <YearBlock key={block.year} block={block} />
+        ))}
       </TimelineWrapper>
     </Section>
   );
@@ -170,14 +272,11 @@ type ItemCardProps = {
   month: string;
   text: string;
   side: Side;
-  order: number;
 };
 
-const ItemCard = ({ month, text, side, order }: ItemCardProps) => {
-  const { ref, isInView } = useFadeInOnView(0.8);
-
+const ItemCard = ({ month, text, side }: ItemCardProps) => {
   return (
-    <Card ref={ref} $side={side} $isVisible={isInView} $order={order}>
+    <Card $side={side}>
       <Month>{month}</Month>
       <Text>{text}</Text>
     </Card>
@@ -195,6 +294,8 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  gap: 50px;
 
   position: relative;
 `;
@@ -226,9 +327,14 @@ const TimelineWrapper = styled.div`
   }
 `;
 
-const YearBlock = styled.div`
+const YearBlockContainer = styled.div<{ $isVisible: boolean }>`
   position: relative;
-  padding: 0 0 24px;
+  padding: 0 0 60px;
+
+  opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
+  transform: ${({ $isVisible }) =>
+    $isVisible ? "translateY(0)" : "translateY(24px)"};
+  transition: opacity 0.6s ease, transform 0.6s ease;
 `;
 
 const YearBadge = styled.div`
@@ -270,17 +376,14 @@ const Dot = styled.span`
   z-index: 1;
 `;
 
-const Card = styled.div<{
-  $side: Side;
-  $isVisible: boolean;
-  $order: number;
-}>`
+const Card = styled.div<{ $side: Side }>`
   position: relative;
-  max-width: 360px;
-  padding: 18px 24px;
+  width: 100%;
+  /* max-width: 360px; */
+  padding: 16px;
   border-radius: 12px;
   background-color: #f9fafb;
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+  /* box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06); */
   display: flex;
   gap: 12px;
   align-items: center;
@@ -293,13 +396,6 @@ const Card = styled.div<{
 
   grid-column: ${({ $side }) => ($side === "left" ? "1 / 2" : "2 / 3")};
 
-  /* fade in up */
-  opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
-  transform: ${({ $isVisible }) =>
-    $isVisible ? "translateY(0)" : "translateY(24px)"};
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  transition-delay: ${({ $order }) => `${0.2 * $order}s`};
-
   @media (max-width: 768px) {
     max-width: 100%;
   }
@@ -308,11 +404,11 @@ const Card = styled.div<{
 const Month = styled.span`
   flex-shrink: 0;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   color: #6b7280;
 `;
 
 const Text = styled.p`
-  font-size: 15px;
+  font-size: 16px;
   color: #4b5563;
 `;
