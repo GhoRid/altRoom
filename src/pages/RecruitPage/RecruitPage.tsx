@@ -2,6 +2,7 @@ import styled from "styled-components";
 import HeroSection from "./components/HeroSection";
 import RecruitImage from "../../assets/images/company/recruite.png";
 import MicroCrewSection from "./components/MicroCrewSection";
+import FutureWithAltroomSection from "./components/FutureWithAltroomSection";
 
 const RecruitPage = () => {
   return (
@@ -13,6 +14,8 @@ const RecruitPage = () => {
       </ImageCard>
 
       <MicroCrewSection />
+
+      <FutureWithAltroomSection />
     </Wrapper>
   );
 };
