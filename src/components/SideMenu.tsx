@@ -15,7 +15,7 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
     { name: "서비스소개", route: "/service" },
     { name: "기업소개", route: "/company" },
     { name: "시공사례", route: "/construction-cases" },
-    { name: "모듈정보", route: "/modules" },
+    { name: "모듈정보", route: "/module" },
     { name: "마이크루", route: "/company/recruit" },
   ];
 
