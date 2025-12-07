@@ -3,6 +3,7 @@ import HeroSection from "./components/HeroSection";
 import RecruitImage from "../../assets/images/company/recruite.png";
 import MicroCrewSection from "./components/MicroCrewSection";
 import FutureWithAltroomSection from "./components/FutureWithAltroomSection";
+import ApplySection from "./components/ApplySection";
 
 const RecruitPage = () => {
   return (
@@ -16,6 +17,8 @@ const RecruitPage = () => {
       <MicroCrewSection />
 
       <FutureWithAltroomSection />
+
+      <ApplySection />
     </Wrapper>
   );
 };
