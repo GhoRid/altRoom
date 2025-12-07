@@ -46,12 +46,12 @@ const Inner = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-top: 80px;
+  padding-top: 102px;
 `;
 
 const SectionLabel = styled.div`
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 600;
   color: #111827;
   margin-bottom: 40px;
 `;
@@ -62,7 +62,7 @@ const Title = styled.div`
   gap: 8px;
   font-size: 36px;
   font-weight: 700;
-  line-height: 1.5;
+  line-height: 44px;
   color: #111827;
   margin-bottom: 72px;
 `;
