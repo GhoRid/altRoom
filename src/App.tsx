@@ -10,6 +10,7 @@ import CEOPage from "./pages/CEOPage/CEOPage";
 import VisionPage from "./pages/VisionPage/VisionPage";
 import HistoryPage from "./pages/HistoryPage/HistoryPage";
 import PartnersPage from "./pages/PartnersPage/PartnersPage";
+import RecruitPage from "./pages/RecruitPage/RecruitPage";
 
 const isAuthenticated = () => !!localStorage.getItem("accessToken");
 
@@ -48,6 +49,7 @@ function App() {
               <Route path="vision" element={<VisionPage />} />
               <Route path="history" element={<HistoryPage />} />
               <Route path="partners" element={<PartnersPage />} />
+              <Route path="recruit" element={<RecruitPage />} />
             </Route>
           </Route>
 
