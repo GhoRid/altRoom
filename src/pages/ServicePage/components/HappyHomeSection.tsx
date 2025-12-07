@@ -7,7 +7,7 @@ import FadeInUpOnView from "../../../components/FadeInUpOnView";
 const HappyHomeSection = () => {
   return (
     <SectionWrapper>
-      <FadeInUpOnView threshold={0.5} duration={0.7}>
+      <FadeInUpOnView threshold={0.3} duration={0.7}>
         <SectionInner>
           <Title>당신도 지금, 나만의 행복한 집을 원하시나요?</Title>
 
