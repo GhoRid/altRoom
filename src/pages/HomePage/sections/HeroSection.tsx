@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import FadeInUpOnView from "../../../components/FadeInUpOnView";
+import { useNavigate } from "react-router";
 
 const HeroSection = () => {
+  const navitate = useNavigate();
+
   return (
     <Wrapper>
       <Content>
@@ -17,9 +20,15 @@ const HeroSection = () => {
           </SubText>
 
           <ButtonRow>
-            <PrimaryButton>알트룸 자동견적</PrimaryButton>
-            <GhostButton>서비스소개</GhostButton>
-            <GhostButton>시공사례</GhostButton>
+            <PrimaryButton onClick={() => navitate("/estimate")}>
+              알트룸 자동견적
+            </PrimaryButton>
+            <GhostButton onClick={() => navitate("/service")}>
+              서비스소개
+            </GhostButton>
+            <GhostButton onClick={() => navitate("/construction-cases")}>
+              시공사례
+            </GhostButton>
           </ButtonRow>
         </FadeInUpOnView>
       </Content>
