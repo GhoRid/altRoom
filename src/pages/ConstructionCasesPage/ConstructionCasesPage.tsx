@@ -6,9 +6,14 @@ import CaseCard from "./components/CaseCard";
 import data from "./data.json";
 import { colors } from "../../styles/color";
 
+const PAGE_SIZE = 8;
+
 const ConstructionCasesPage = () => {
   // 검색 파라미터 관리
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const currentPageParam = searchParams.get("page") || "1";
+  const currentPage = Math.max(1, Number(currentPageParam) || 1);
 
   const propertyType = searchParams.get("property_type") || "전체";
   const budgetType = searchParams.get("budget_type") || "전체";
@@ -18,6 +23,7 @@ const ConstructionCasesPage = () => {
     (key: string, value: string) => {
       // 검색 파라미터를 매핑해주기. 업데이트를 next에 반영
       const next = new URLSearchParams(searchParams);
+      next.delete("page");
       if (value === "전체") {
         //선택된 키 제거
         next.delete(key);
@@ -41,6 +47,21 @@ const ConstructionCasesPage = () => {
       return false;
     return true;
   });
+
+  const totalPages = Math.max(1, Math.ceil(filteredData.length / PAGE_SIZE));
+  const safeCurrentPage = Math.min(currentPage, totalPages);
+  const startIndex = (safeCurrentPage - 1) * PAGE_SIZE;
+  const paginatedData = filteredData.slice(startIndex, startIndex + PAGE_SIZE);
+
+  const handlePageChange = (page: number) => {
+    const next = new URLSearchParams(searchParams);
+    if (page <= 1) {
+      next.delete("page");
+    } else {
+      next.set("page", String(page));
+    }
+    setSearchParams(next);
+  };
 
   return (
     <Wrapper>
@@ -99,18 +120,33 @@ const ConstructionCasesPage = () => {
 
         {/* 예시 카드 목록 */}
         <CardList>
-          {filteredData.map((item) => (
+          {paginatedData.map((item) => (
             <CaseCard key={item.id} item={item} />
           ))}
         </CardList>
+        {totalPages > 1 && (
+          <PaginationWrapper>
+            {Array.from({ length: totalPages }, (_, index) => {
+              const page = index + 1;
+              return (
+                <PaginationButton
+                  key={page}
+                  type="button"
+                  $active={page === safeCurrentPage}
+                  onClick={() => handlePageChange(page)}
+                >
+                  {page}
+                </PaginationButton>
+              );
+            })}
+          </PaginationWrapper>
+        )}
       </Content>
     </Wrapper>
   );
 };
 
 export default ConstructionCasesPage;
-
-/* ---------------- Styled ---------------- */
 
 const Wrapper = styled.div`
   max-width: 992px;
@@ -172,11 +208,40 @@ const CardList = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 32px;
+  gap: 24px;
   grid-column: 2 / -1;
 
   @media (max-width: 960px) {
     grid-column: auto;
+  }
+`;
+
+const PaginationWrapper = styled.div`
+  grid-column: 2 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+
+  @media (max-width: 960px) {
+    grid-column: auto;
+  }
+`;
+
+const PaginationButton = styled.button<{ $active: boolean }>`
+  min-width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  background: ${({ $active }) => ($active ? colors.app_brown : "#f3f4f6")};
+  color: ${({ $active }) => ($active ? "#ffffff" : "#111827")};
+  transition: background 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background: ${({ $active }) => ($active ? colors.app_brown : "#e5e7eb")};
   }
 `;
 

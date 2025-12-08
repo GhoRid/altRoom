@@ -16,7 +16,6 @@ type TimelineYearBlock = {
   items: TimelineItem[];
 };
 
-// helper function to group items into rows of up to two
 const groupItemsByRow = (items: TimelineItem[]): TimelineItem[][] => {
   const rows: TimelineItem[][] = [];
   for (let i = 0; i < items.length; i += 2) {
@@ -25,7 +24,6 @@ const groupItemsByRow = (items: TimelineItem[]): TimelineItem[][] => {
   return rows;
 };
 
-// 여기서 타임라인 데이터만 수정해서 쓰면 됨
 const TIMELINE_2020_now: TimelineYearBlock[] = [
   {
     year: 2025,

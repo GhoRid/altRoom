@@ -12,7 +12,7 @@
     "property_type": "아파트",
     "construction_type": "신축 전체 리모델링",
     "tags": ["럭셔리", "시크", "고급스러운", "세련된", "럭셔리마블"],
-    "thumbnail": ""
+    "thumbnail": "1.png"
   },
   {
     "id": 2,
@@ -27,7 +27,7 @@
     "property_type": "아파트",
     "construction_type": "신축 전체 리모델링",
     "tags": ["신축", "미니멀", "세련된", "따듯한", "코지그레이", "개방감"],
-    "thumbnail": ""
+    "thumbnail": "2.png"
   },
   {
     "id": 3,
@@ -42,7 +42,7 @@
     "property_type": "아파트",
     "construction_type": "신축 전체 리모델링",
     "tags": ["미니멀", "모던", "화이트톤", "개방감"],
-    "thumbnail": ""
+    "thumbnail": "3.png"
   },
   {
     "id": 4,
@@ -57,6 +57,209 @@
     "property_type": "주택",
     "construction_type": "신축 전체 리모델링",
     "tags": ["신축", "시크", "하이엔드", "고급스러운"],
-    "thumbnail": ""
+    "thumbnail": "4.png"
+  },
+
+  {
+    "id": 5,
+    "title": "트리마제 66PY",
+    "location": "트리마제",
+    "complex": "",
+    "size_py": 66,
+    "size_label": "66평",
+    "duration_weeks": 8,
+    "duration_label": "8주",
+    "budget_grade": "스탠다드",
+    "property_type": "아파트",
+    "construction_type": "신축 전체 리모델링",
+    "tags": ["신축", "시크", "고급스러운", "따뜻한"],
+    "thumbnail": "5.png"
+  },
+  {
+    "id": 6,
+    "title": "강남 삼성동 롯데캐슬프레미어 43PY",
+    "location": "삼성동",
+    "complex": "롯데캐슬프레미어",
+    "size_py": 43,
+    "size_label": "43평",
+    "duration_weeks": 8,
+    "duration_label": "8주",
+    "budget_grade": "하이엔드",
+    "property_type": "아파트",
+    "construction_type": "신축 전체 리모델링",
+    "tags": ["럭셔리", "시크", "하이엔드", "베이지모던", "코지그레이"],
+    "thumbnail": "6.png"
+  },
+  {
+    "id": 7,
+    "title": "한남동 대성 이태리하우스 41PY",
+    "location": "한남동",
+    "complex": "대성 이태리하우스",
+    "size_py": 41,
+    "size_label": "41평",
+    "duration_weeks": 10,
+    "duration_label": "10주",
+    "budget_grade": "하이엔드",
+    "property_type": "아파트",
+    "construction_type": "신축 전체 리모델링",
+    "tags": [
+      "럭셔리",
+      "시크",
+      "하이엔드",
+      "세련된",
+      "코지그레이",
+      "럭셔리마블"
+    ],
+    "thumbnail": "7.png"
+  },
+  {
+    "id": 8,
+    "title": "광주 임동 S-클래스 더 제니스 31PY",
+    "location": "임동",
+    "complex": "S-클래스 더 제니스",
+    "size_py": 31,
+    "size_label": "31평",
+    "duration_weeks": 5,
+    "duration_label": "5주",
+    "budget_grade": "스탠다드",
+    "property_type": "아파트",
+    "construction_type": "신축 전체 리모델링",
+    "tags": ["신축", "프렌치", "고급스러운", "따뜻한"],
+    "thumbnail": "8.png"
+  },
+  {
+    "id": 9,
+    "title": "광주 치평동 상무SK뷰 33py",
+    "location": "치평동",
+    "complex": "상무SK뷰",
+    "size_py": 33,
+    "size_label": "33평",
+    "duration_weeks": 5,
+    "duration_label": "5주",
+    "budget_grade": "스탠다드",
+    "property_type": "아파트",
+    "construction_type": "신축 전체 리모델링",
+    "tags": ["신축", "고급스러운", "화이트앤우드"],
+    "thumbnail": "9.png"
+  },
+  {
+    "id": 10,
+    "title": "동작 흑석동 한강센트레빌 2차 34py",
+    "location": "흑석동",
+    "complex": "한강센트레빌 2차",
+    "size_py": 34,
+    "size_label": "34평",
+    "duration_weeks": 6,
+    "duration_label": "6주",
+    "budget_grade": "스탠다드",
+    "property_type": "아파트",
+    "construction_type": "신축 전체 리모델링",
+    "tags": ["빈티지", "코지그레이"],
+    "thumbnail": "10.png"
+  },
+  {
+    "id": 11,
+    "title": "시흥 장곡동 장현 더 포레마제 24py",
+    "location": "장곡동",
+    "complex": "장현 더 포레마제",
+    "size_py": 24,
+    "size_label": "24평",
+    "duration_weeks": 7,
+    "duration_label": "7주",
+    "budget_grade": "스탠다드",
+    "property_type": "아파트",
+    "construction_type": "신축 전체 리모델링",
+    "tags": ["아늑한", "화이트앤우드", "블랙앤화이트"],
+    "thumbnail": "11.png"
+  },
+  {
+    "id": 12,
+    "title": "학동 학2마을 무등산리버파크아파트 33py",
+    "location": "학동",
+    "complex": "학2마을 무등산리버파크아파트",
+    "size_py": 33,
+    "size_label": "33평",
+    "duration_weeks": 8,
+    "duration_label": "8주",
+    "budget_grade": "하이엔드",
+    "property_type": "아파트",
+    "construction_type": "신축 전체 리모델링",
+    "tags": [
+      "미니멀",
+      "시크",
+      "하이엔드",
+      "고급스러운",
+      "세련된",
+      "코지그레이"
+    ],
+    "thumbnail": "12.png"
+  },
+  {
+    "id": 13,
+    "title": "광주 치평동 금호갤러리 303 62py",
+    "location": "치평동",
+    "complex": "금호갤러리 303",
+    "size_py": 62,
+    "size_label": "62평",
+    "duration_weeks": 9,
+    "duration_label": "9주",
+    "budget_grade": "하이엔드",
+    "property_type": "아파트",
+    "construction_type": "신축 전체 리모델링",
+    "tags": [
+      "미니멀",
+      "럭셔리",
+      "시크",
+      "하이엔드",
+      "고급스러운",
+      "베이지모던",
+      "코지그레이"
+    ],
+    "thumbnail": "13.png"
+  },
+  {
+    "id": 14,
+    "title": "압해도 단독주택 55py",
+    "location": "압해도",
+    "complex": "단독주택",
+    "size_py": 55,
+    "size_label": "55평",
+    "duration_weeks": 17,
+    "duration_label": "17주",
+    "budget_grade": "프리미엄",
+    "property_type": "주택",
+    "construction_type": "신축 전체 리모델링",
+    "tags": ["클래식", "유니크", "아늑한"],
+    "thumbnail": "14.png"
+  },
+  {
+    "id": 15,
+    "title": "종로 평동 경희궁 자이 33py",
+    "location": "평동",
+    "complex": "경희궁 자이",
+    "size_py": 33,
+    "size_label": "33평",
+    "duration_weeks": 4,
+    "duration_label": "4주",
+    "budget_grade": "스탠다드",
+    "property_type": "아파트",
+    "construction_type": "신축 전체 리모델링",
+    "tags": ["미니멀", "아늑한", "따뜻한", "코지그레이"],
+    "thumbnail": "15.png"
+  },
+  {
+    "id": 16,
+    "title": "광주 운암동 한곡 32py",
+    "location": "운암동",
+    "complex": "한곡",
+    "size_py": 32,
+    "size_label": "32평",
+    "duration_weeks": 3,
+    "duration_label": "3주",
+    "budget_grade": "스탠다드",
+    "property_type": "아파트",
+    "construction_type": "신축 전체 리모델링",
+    "tags": ["미니멀", "심플", "실용적인", "따뜻한", "코지그레이"],
+    "thumbnail": "16.png"
   }
 ]

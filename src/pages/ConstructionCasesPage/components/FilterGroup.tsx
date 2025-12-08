@@ -15,22 +15,24 @@ const FilterGroup = ({
   active,
   onChange,
   paramKey,
-}: FilterGroupProps) => (
-  <FilterBlock>
-    <FilterLabel>{label}</FilterLabel>
-    <FilterRow>
-      {options.map((item) => (
-        <FilterButton
-          key={item}
-          $active={active === item}
-          onClick={() => onChange(paramKey, item)}
-        >
-          {item}
-        </FilterButton>
-      ))}
-    </FilterRow>
-  </FilterBlock>
-);
+}: FilterGroupProps) => {
+  return (
+    <FilterBlock>
+      <FilterLabel>{label}</FilterLabel>
+      <FilterRow>
+        {options.map((item) => (
+          <FilterButton
+            key={item}
+            $active={active === item}
+            onClick={() => onChange(paramKey, item)}
+          >
+            {item}
+          </FilterButton>
+        ))}
+      </FilterRow>
+    </FilterBlock>
+  );
+};
 
 export default FilterGroup;
 
