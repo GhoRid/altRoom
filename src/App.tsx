@@ -12,6 +12,7 @@ import HistoryPage from "./pages/HistoryPage/HistoryPage";
 import PartnersPage from "./pages/PartnersPage/PartnersPage";
 import RecruitPage from "./pages/RecruitPage/RecruitPage";
 import ModulPage from "./pages/ModulPage/ModulPage";
+import ConstructionCasesPage from "./pages/ConstructionCasesPage/ConstructionCasesPage";
 
 const isAuthenticated = () => !!localStorage.getItem("accessToken");
 
@@ -43,6 +44,10 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/service" element={<ServicePage />} />
           <Route path="/module" element={<ModulPage />} />
+          <Route
+            path="/construction-cases"
+            element={<ConstructionCasesPage />}
+          />
 
           <Route element={<CompanyLayout />}>
             <Route path="/company">
