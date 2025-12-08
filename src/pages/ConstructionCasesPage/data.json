@@ -12,7 +12,7 @@
     "property_type": "아파트",
     "construction_type": "신축 전체 리모델링",
     "tags": ["럭셔리", "시크", "고급스러운", "세련된", "럭셔리마블"],
-    "thumbnail": "1.png"
+    "thumbnail": "1.webp"
   },
   {
     "id": 2,
@@ -27,7 +27,7 @@
     "property_type": "아파트",
     "construction_type": "신축 전체 리모델링",
     "tags": ["신축", "미니멀", "세련된", "따듯한", "코지그레이", "개방감"],
-    "thumbnail": "2.png"
+    "thumbnail": "2.webp"
   },
   {
     "id": 3,
@@ -42,7 +42,7 @@
     "property_type": "아파트",
     "construction_type": "신축 전체 리모델링",
     "tags": ["미니멀", "모던", "화이트톤", "개방감"],
-    "thumbnail": "3.png"
+    "thumbnail": "3.webp"
   },
   {
     "id": 4,
@@ -57,7 +57,7 @@
     "property_type": "주택",
     "construction_type": "신축 전체 리모델링",
     "tags": ["신축", "시크", "하이엔드", "고급스러운"],
-    "thumbnail": "4.png"
+    "thumbnail": "4.webp"
   },
 
   {
@@ -73,7 +73,7 @@
     "property_type": "아파트",
     "construction_type": "신축 전체 리모델링",
     "tags": ["신축", "시크", "고급스러운", "따뜻한"],
-    "thumbnail": "5.png"
+    "thumbnail": "5.webp"
   },
   {
     "id": 6,
@@ -88,7 +88,7 @@
     "property_type": "아파트",
     "construction_type": "신축 전체 리모델링",
     "tags": ["럭셔리", "시크", "하이엔드", "베이지모던", "코지그레이"],
-    "thumbnail": "6.png"
+    "thumbnail": "6.webp"
   },
   {
     "id": 7,
@@ -110,7 +110,7 @@
       "코지그레이",
       "럭셔리마블"
     ],
-    "thumbnail": "7.png"
+    "thumbnail": "7.webp"
   },
   {
     "id": 8,
@@ -125,7 +125,7 @@
     "property_type": "아파트",
     "construction_type": "신축 전체 리모델링",
     "tags": ["신축", "프렌치", "고급스러운", "따뜻한"],
-    "thumbnail": "8.png"
+    "thumbnail": "8.webp"
   },
   {
     "id": 9,
@@ -140,7 +140,7 @@
     "property_type": "아파트",
     "construction_type": "신축 전체 리모델링",
     "tags": ["신축", "고급스러운", "화이트앤우드"],
-    "thumbnail": "9.png"
+    "thumbnail": "9.webp"
   },
   {
     "id": 10,
@@ -155,7 +155,7 @@
     "property_type": "아파트",
     "construction_type": "신축 전체 리모델링",
     "tags": ["빈티지", "코지그레이"],
-    "thumbnail": "10.png"
+    "thumbnail": "10.webp"
   },
   {
     "id": 11,
@@ -170,7 +170,7 @@
     "property_type": "아파트",
     "construction_type": "신축 전체 리모델링",
     "tags": ["아늑한", "화이트앤우드", "블랙앤화이트"],
-    "thumbnail": "11.png"
+    "thumbnail": "11.webp"
   },
   {
     "id": 12,
@@ -192,7 +192,7 @@
       "세련된",
       "코지그레이"
     ],
-    "thumbnail": "12.png"
+    "thumbnail": "12.webp"
   },
   {
     "id": 13,
@@ -215,7 +215,7 @@
       "베이지모던",
       "코지그레이"
     ],
-    "thumbnail": "13.png"
+    "thumbnail": "13.webp"
   },
   {
     "id": 14,
@@ -230,7 +230,7 @@
     "property_type": "주택",
     "construction_type": "신축 전체 리모델링",
     "tags": ["클래식", "유니크", "아늑한"],
-    "thumbnail": "14.png"
+    "thumbnail": "14.webp"
   },
   {
     "id": 15,
@@ -245,7 +245,7 @@
     "property_type": "아파트",
     "construction_type": "신축 전체 리모델링",
     "tags": ["미니멀", "아늑한", "따뜻한", "코지그레이"],
-    "thumbnail": "15.png"
+    "thumbnail": "15.webp"
   },
   {
     "id": 16,
@@ -260,6 +260,6 @@
     "property_type": "아파트",
     "construction_type": "신축 전체 리모델링",
     "tags": ["미니멀", "심플", "실용적인", "따뜻한", "코지그레이"],
-    "thumbnail": "16.png"
+    "thumbnail": "16.webp"
   }
 ]
