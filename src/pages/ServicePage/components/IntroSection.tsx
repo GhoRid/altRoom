@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import realTimeQuoteImageUrl from "../../../assets/images/service/realTimeQuote.png";
-import nonFaceConsultationImageUrl from "../../../assets/images/service/nonFaceConsultation.png";
-import sampleBoxImageUrl from "../../../assets/images/service/sampleBox.png";
+import realTimeQuoteImageUrl from "../../../assets/images/service/realTimeQuote.webp";
+import nonFaceConsultationImageUrl from "../../../assets/images/service/nonFaceConsultation.webp";
+import sampleBoxImageUrl from "../../../assets/images/service/sampleBox.webp";
 import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const CARD_LIST = [

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import vedio from "../../../assets/images/company/vedio.png";
+import vedio from "../../../assets/images/company/vedio.webp";
 
 const VedioSection = () => {
   return (

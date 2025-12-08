@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import imagesrc from "../../assets/images/login.png";
+import imagesrc from "../../assets/images/login.webp";
 import { ReactComponent as KakaoIcon } from "../../assets/svgs/kakao.svg";
 
 const LoginPage = () => {

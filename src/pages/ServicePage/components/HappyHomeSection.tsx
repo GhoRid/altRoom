@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import meetingImageUrl from "../../../assets/images/service/meeting.png";
-import personImageUrl from "../../../assets/images/service/person.png";
+import meetingImageUrl from "../../../assets/images/service/meeting.webp";
+import personImageUrl from "../../../assets/images/service/person.webp";
 import { colors } from "../../../styles/color";
 import FadeInUpOnView from "../../../components/FadeInUpOnView";
 

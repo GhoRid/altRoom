@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import HeroSection from "./components/HeroSection";
-import RecruitImage from "../../assets/images/company/recruite.png";
+import RecruitImage from "../../assets/images/company/recruite.webp";
 import MicroCrewSection from "./components/MicroCrewSection";
 import FutureWithAltroomSection from "./components/FutureWithAltroomSection";
 import ApplySection from "./components/ApplySection";

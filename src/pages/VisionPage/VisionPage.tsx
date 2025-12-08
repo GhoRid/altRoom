@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import HeroSection from "./components/HeroSection";
-import VisionImage from "../../assets/images/company/vision.png";
+import VisionImage from "../../assets/images/company/vision.webp";
 import VisionCardSection from "./components/VisionCardSection";
 import CoreValuesSection from "../CompanyPage/Components/CoreValuesSection";
 

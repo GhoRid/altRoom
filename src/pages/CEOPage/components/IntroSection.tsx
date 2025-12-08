@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import CEOImageUrl from "../../../assets/images/ceo/ceo.png";
+import CEOImageUrl from "../../../assets/images/ceo/ceo.webp";
 import { colors } from "../../../styles/color";
 import { ReactComponent as InstagramIcon } from "../../../assets/svgs/instagram.svg";
 import { ReactComponent as ThreadIcon } from "../../../assets/svgs/thread.svg";

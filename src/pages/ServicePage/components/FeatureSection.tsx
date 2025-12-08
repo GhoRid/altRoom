@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import dataImageUrl from "../../../assets/images/service/data.png";
-import moduleImageUrl from "../../../assets/images/service/module.png";
-import constructionImageUrl from "../../../assets/images/service/construction.png";
+import dataImageUrl from "../../../assets/images/service/data.webp";
+import moduleImageUrl from "../../../assets/images/service/module.webp";
+import constructionImageUrl from "../../../assets/images/service/construction.webp";
 import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const FeatureSection = () => {

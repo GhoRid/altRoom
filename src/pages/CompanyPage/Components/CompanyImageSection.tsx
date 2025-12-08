@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import company1ImageUrl from "../../../assets/images/company/company1.png";
-import company2ImageUrl from "../../../assets/images/company/company2.png";
+import company1ImageUrl from "../../../assets/images/company/company1.webp";
+import company2ImageUrl from "../../../assets/images/company/company2.webp";
 
 const CompanyImageSection = () => {
   return (
