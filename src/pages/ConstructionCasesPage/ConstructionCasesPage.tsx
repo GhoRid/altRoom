@@ -61,6 +61,7 @@ const ConstructionCasesPage = () => {
       next.set("page", String(page));
     }
     setSearchParams(next);
+    window.scrollTo({ top: 0 });
   };
 
   return (
