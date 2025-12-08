@@ -1,33 +1,36 @@
 import styled from "styled-components";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const IntroSection = () => {
   return (
     <Section>
-      <Kicker>공간모듈 솔루션</Kicker>
-      <MainTitle>Alt room</MainTitle>
+      <FadeInUpOnView>
+        <Kicker>공간모듈 솔루션</Kicker>
+        <MainTitle>Alt room</MainTitle>
 
-      <ParagraphGroup>
-        <Paragraph>
-          <Strong>우후죽순의 인테리어 시장,</Strong>
-        </Paragraph>
-        <Paragraph>
-          알트룸은 파편화된 견적정보를 <Strong>빅데이터</Strong>를 기반으로
-        </Paragraph>
-        <Paragraph>
-          표준화하고 복잡했던 인테리어 과정들을 <Strong>디자인 모듈화</Strong>
-          라는
-          <br />
-          시스템을 통해 간편화시켰습니다.
-        </Paragraph>
-      </ParagraphGroup>
+        <ParagraphGroup>
+          <Paragraph>
+            <Strong>우후죽순의 인테리어 시장,</Strong>
+          </Paragraph>
+          <Paragraph>
+            알트룸은 파편화된 견적정보를 <Strong>빅데이터</Strong>를 기반으로
+          </Paragraph>
+          <Paragraph>
+            표준화하고 복잡했던 인테리어 과정들을 <Strong>디자인 모듈화</Strong>
+            라는
+            <br />
+            시스템을 통해 간편화시켰습니다.
+          </Paragraph>
+        </ParagraphGroup>
 
-      <ParagraphGroup>
-        <Paragraph>변화하는 시장속의 디지털라이징을 통해</Paragraph>
-        <Paragraph>
-          <Strong>투명하고 신뢰있는 인테리어 시장</Strong>을 만들어
-          나가겠습니다.
-        </Paragraph>
-      </ParagraphGroup>
+        <ParagraphGroup>
+          <Paragraph>변화하는 시장속의 디지털라이징을 통해</Paragraph>
+          <Paragraph>
+            <Strong>투명하고 신뢰있는 인테리어 시장</Strong>을 만들어
+            나가겠습니다.
+          </Paragraph>
+        </ParagraphGroup>
+      </FadeInUpOnView>
     </Section>
   );
 };

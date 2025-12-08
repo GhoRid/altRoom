@@ -1,18 +1,21 @@
 import styled from "styled-components";
 import company1ImageUrl from "../../../assets/images/company/company1.webp";
 import company2ImageUrl from "../../../assets/images/company/company2.webp";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const CompanyImageSection = () => {
   return (
     <Section>
-      <ImageGrid>
-        <ImageWrapper>
-          <Image src={company1ImageUrl} alt="Company Building" />
-        </ImageWrapper>
-        <ImageWrapper>
-          <Image src={company2ImageUrl} alt="Company Building" />
-        </ImageWrapper>
-      </ImageGrid>
+      <FadeInUpOnView threshold={0.1} delay={0.3}>
+        <ImageGrid>
+          <ImageWrapper>
+            <Image src={company1ImageUrl} alt="Company Building" />
+          </ImageWrapper>
+          <ImageWrapper>
+            <Image src={company2ImageUrl} alt="Company Building" />
+          </ImageWrapper>
+        </ImageGrid>
+      </FadeInUpOnView>
     </Section>
   );
 };

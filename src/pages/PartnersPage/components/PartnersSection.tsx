@@ -1,47 +1,54 @@
 import styled from "styled-components";
 import { colors } from "../../../styles/color";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const PartnersSection = () => {
   return (
     <Wrapper>
       {/* 자재 */}
-      <CategoryBlock>
-        <CategoryTitle>자재</CategoryTitle>
-        <CardGrid>
-          {[
-            "LX하우시스",
-            "영림",
-            "대림",
-            "아메리칸 스탠다드",
-            "이건",
-            "예림",
-          ].map((item) => (
-            <Card key={item}>{item}</Card>
-          ))}
-        </CardGrid>
-      </CategoryBlock>
+      <FadeInUpOnView threshold={0.1} delay={0.15}>
+        <CategoryBlock>
+          <CategoryTitle>자재</CategoryTitle>
+          <CardGrid>
+            {[
+              "LX하우시스",
+              "영림",
+              "대림",
+              "아메리칸 스탠다드",
+              "이건",
+              "예림",
+            ].map((item) => (
+              <Card key={item}>{item}</Card>
+            ))}
+          </CardGrid>
+        </CategoryBlock>
+      </FadeInUpOnView>
 
       {/* 가구/가전 */}
-      <CategoryBlock>
-        <CategoryTitle>가구/가전</CategoryTitle>
-        <CardGrid>
-          {["삼성전자", "LG전자", "일룸", "한샘", "에이스침대", "시몬스"].map(
-            (item) => (
-              <Card key={item}>{item}</Card>
-            )
-          )}
-        </CardGrid>
-      </CategoryBlock>
+      <FadeInUpOnView threshold={0.1} delay={0.3}>
+        <CategoryBlock>
+          <CategoryTitle>가구/가전</CategoryTitle>
+          <CardGrid>
+            {["삼성전자", "LG전자", "일룸", "한샘", "에이스침대", "시몬스"].map(
+              (item) => (
+                <Card key={item}>{item}</Card>
+              )
+            )}
+          </CardGrid>
+        </CategoryBlock>
+      </FadeInUpOnView>
 
       {/* 시공 */}
-      <CategoryBlock>
-        <CategoryTitle>시공</CategoryTitle>
-        <CardGrid>
-          {["알트룸 파트너스", "알트룸 시공팀"].map((item) => (
-            <Card key={item}>{item}</Card>
-          ))}
-        </CardGrid>
-      </CategoryBlock>
+      <FadeInUpOnView threshold={0.1}>
+        <CategoryBlock>
+          <CategoryTitle>시공</CategoryTitle>
+          <CardGrid>
+            {["알트룸 파트너스", "알트룸 시공팀"].map((item) => (
+              <Card key={item}>{item}</Card>
+            ))}
+          </CardGrid>
+        </CategoryBlock>
+      </FadeInUpOnView>
     </Wrapper>
   );
 };

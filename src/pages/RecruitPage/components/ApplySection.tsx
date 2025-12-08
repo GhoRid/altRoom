@@ -1,16 +1,19 @@
 import styled from "styled-components";
 import { colors } from "../../../styles/color";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const ApplySection = () => {
   return (
     <ApplySectionWrapper>
-      <ApplyTexts>
-        <p>자유양식 이력서</p>
-        <p>자유양식 포트폴리오</p>
-        <p>상시채용 official@alt-room.com</p>
-      </ApplyTexts>
+      <FadeInUpOnView threshold={0.1}>
+        <ApplyTexts>
+          <p>자유양식 이력서</p>
+          <p>자유양식 포트폴리오</p>
+          <p>상시채용 official@alt-room.com</p>
+        </ApplyTexts>
 
-      <ApplyButton>지원하기</ApplyButton>
+        <ApplyButton>지원하기</ApplyButton>
+      </FadeInUpOnView>
     </ApplySectionWrapper>
   );
 };

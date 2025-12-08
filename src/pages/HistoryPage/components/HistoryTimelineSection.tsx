@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { colors } from "../../../styles/color";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 type Side = "left" | "right";
 
@@ -245,7 +246,9 @@ const YearBlock = ({ block }: YearBlockProps) => {
 const HistoryTimelineSection = () => {
   return (
     <Section>
-      <SectionTitle>2020 ~ 현재</SectionTitle>
+      <FadeInUpOnView threshold={0.3}>
+        <SectionTitle>2020 ~ 현재</SectionTitle>
+      </FadeInUpOnView>
 
       <TimelineWrapper>
         {TIMELINE_2020_now.map((block) => (
@@ -304,6 +307,8 @@ const SectionTitle = styled.h2`
   font-weight: 700;
   margin-bottom: 80px;
   color: #111827;
+
+  text-align: center;
 `;
 
 const TimelineWrapper = styled.div`

@@ -4,6 +4,7 @@ import { ReactComponent as TrustIcon } from "../../../assets/svgs/trust.svg";
 import { ReactComponent as InnovationIcon } from "../../../assets/svgs/innovation.svg";
 import { ReactComponent as ProfessionalismIcon } from "../../../assets/svgs/professionalism.svg";
 import { ReactComponent as GrowthIcon } from "../../../assets/svgs/growth.svg";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const CORE_VALUES = [
   {
@@ -35,28 +36,30 @@ const CORE_VALUES = [
 const CoreValuesSection = () => {
   return (
     <Section>
-      <Inner>
-        <Title>핵심가치</Title>
+      <FadeInUpOnView threshold={0.3}>
+        <Inner>
+          <Title>핵심가치</Title>
 
-        <CardsRow>
-          {CORE_VALUES.map((value) => (
-            <Card key={value.key}>
-              <IconContainer>{value.icon}</IconContainer>
+          <CardsRow>
+            {CORE_VALUES.map((value) => (
+              <Card key={value.key}>
+                <IconContainer>{value.icon}</IconContainer>
 
-              <CardLabel>{value.label}</CardLabel>
+                <CardLabel>{value.label}</CardLabel>
 
-              <CardText>
-                {value.lines.map((line) => (
-                  <span key={line}>
-                    {line}
-                    <br />
-                  </span>
-                ))}
-              </CardText>
-            </Card>
-          ))}
-        </CardsRow>
-      </Inner>
+                <CardText>
+                  {value.lines.map((line) => (
+                    <span key={line}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
+                </CardText>
+              </Card>
+            ))}
+          </CardsRow>
+        </Inner>
+      </FadeInUpOnView>
     </Section>
   );
 };

@@ -1,18 +1,21 @@
 import styled from "styled-components";
 import { colors } from "../../../styles/color";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const HeroSection = () => {
   return (
     <Section>
-      <Title>
-        인테리어 시장의 혁신을 일으킬
-        <br />
-        열정있는 인재들 다 모여라.
-      </Title>
+      <FadeInUpOnView threshold={0.1}>
+        <Title>
+          인테리어 시장의 혁신을 일으킬
+          <br />
+          열정있는 인재들 다 모여라.
+        </Title>
 
-      <TextBlock>
-        <Paragraph>투명하고 정직한 인테리어 시장을 만들겠습니다.</Paragraph>
-      </TextBlock>
+        <TextBlock>
+          <Paragraph>투명하고 정직한 인테리어 시장을 만들겠습니다.</Paragraph>
+        </TextBlock>
+      </FadeInUpOnView>
     </Section>
   );
 };

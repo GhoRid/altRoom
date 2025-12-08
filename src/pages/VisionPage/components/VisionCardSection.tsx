@@ -1,39 +1,42 @@
 import styled from "styled-components";
 import { colors } from "../../../styles/color";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const VisionCardSection = () => {
   return (
     <Section>
-      <CardContainer>
-        <Card>
-          <CardTitle>MISSION</CardTitle>
-          <CardBody>
-            인테리어 시장의 디지털 전환을 통해
-            <br />
-            투명하고 효율적인 시장 생태계를
-            <br />
-            만듭니다.
-          </CardBody>
-        </Card>
+      <FadeInUpOnView threshold={0.1}>
+        <CardContainer>
+          <Card>
+            <CardTitle>MISSION</CardTitle>
+            <CardBody>
+              인테리어 시장의 디지털 전환을 통해
+              <br />
+              투명하고 효율적인 시장 생태계를
+              <br />
+              만듭니다.
+            </CardBody>
+          </Card>
 
-        <Card>
-          <CardTitle>VISION</CardTitle>
-          <CardBody>
-            모든 공간의 가치를 높이는 글로벌
-            <br />
-            인테리어 플랫폼이 되겠습니다.
-          </CardBody>
-        </Card>
+          <Card>
+            <CardTitle>VISION</CardTitle>
+            <CardBody>
+              모든 공간의 가치를 높이는 글로벌
+              <br />
+              인테리어 플랫폼이 되겠습니다.
+            </CardBody>
+          </Card>
 
-        <Card>
-          <CardTitle>VALUE</CardTitle>
-          <CardBody>
-            신뢰, 혁신, 전문성을 바탕으로 고객과
-            <br />
-            함께 성장합니다.
-          </CardBody>
-        </Card>
-      </CardContainer>
+          <Card>
+            <CardTitle>VALUE</CardTitle>
+            <CardBody>
+              신뢰, 혁신, 전문성을 바탕으로 고객과
+              <br />
+              함께 성장합니다.
+            </CardBody>
+          </Card>
+        </CardContainer>
+      </FadeInUpOnView>
     </Section>
   );
 };

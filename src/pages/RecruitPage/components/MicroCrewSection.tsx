@@ -1,51 +1,56 @@
 import styled from "styled-components";
 import { colors } from "../../../styles/color";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const MicroCrewSection = () => {
   return (
     <MicroCrewWrapper>
-      <MicroCrewInner>
-        <MicroCrewTextGroup>
-          <MicroCrewTitle>트렌디한 시공집단 “마이크루”</MicroCrewTitle>
-          <MicroCrewBody>
-            <p>
-              알트룸은 열정있는 현장소장님들과 품질높은 시공을 전국적으로
-              제공하기 위해
-              <br />
-              “마이크루”라는 프로세스를 만들었습니다.
-              <br />
-              솔루션을 통해{" "}
-              <strong>최고의 시공전문가가 되어 연봉 1억과 </strong>
-              <br />
-              무료 지사창업의 사장님이 되어보세요.
-            </p>
-          </MicroCrewBody>
-        </MicroCrewTextGroup>
+      <FadeInUpOnView threshold={0.1}>
+        <MicroCrewInner>
+          <MicroCrewTextGroup>
+            <MicroCrewTitle>트렌디한 시공집단 “마이크루”</MicroCrewTitle>
+            <MicroCrewBody>
+              <p>
+                알트룸은 열정있는 현장소장님들과 품질높은 시공을 전국적으로
+                제공하기 위해
+                <br />
+                “마이크루”라는 프로세스를 만들었습니다.
+                <br />
+                솔루션을 통해{" "}
+                <strong>최고의 시공전문가가 되어 연봉 1억과 </strong>
+                <br />
+                무료 지사창업의 사장님이 되어보세요.
+              </p>
+            </MicroCrewBody>
+          </MicroCrewTextGroup>
 
-        <MicroCrewCards>
-          <MicroCrewCard>
-            <MicroCrewBadge>주 5일제 근무</MicroCrewBadge>
-            <MicroCrewQuote>
-              “더 이상 작업에 주말근무를 없애 주세요”
-            </MicroCrewQuote>
-          </MicroCrewCard>
+          <MicroCrewCards>
+            <MicroCrewCard>
+              <MicroCrewBadge>주 5일제 근무</MicroCrewBadge>
+              <MicroCrewQuote>
+                “더 이상 작업에 주말근무를 없애 주세요”
+              </MicroCrewQuote>
+            </MicroCrewCard>
 
-          <MicroCrewCard>
-            <MicroCrewBadge>간편한 시공 매뉴얼 제공</MicroCrewBadge>
-            <MicroCrewQuote>“현장내용이 매일 바뀌어서 힘들어요”</MicroCrewQuote>
-          </MicroCrewCard>
+            <MicroCrewCard>
+              <MicroCrewBadge>간편한 시공 매뉴얼 제공</MicroCrewBadge>
+              <MicroCrewQuote>
+                “현장내용이 매일 바뀌어서 힘들어요”
+              </MicroCrewQuote>
+            </MicroCrewCard>
 
-          <MicroCrewCard>
-            <MicroCrewBadge>평균 인센티브 600만원</MicroCrewBadge>
-            <MicroCrewQuote>“우리도 연봉 1억 받고 싶어요”</MicroCrewQuote>
-          </MicroCrewCard>
+            <MicroCrewCard>
+              <MicroCrewBadge>평균 인센티브 600만원</MicroCrewBadge>
+              <MicroCrewQuote>“우리도 연봉 1억 받고 싶어요”</MicroCrewQuote>
+            </MicroCrewCard>
 
-          <MicroCrewCard>
-            <MicroCrewBadge>무료 지사창업 지원</MicroCrewBadge>
-            <MicroCrewQuote>“저도 이제 사장이 되고싶어요”</MicroCrewQuote>
-          </MicroCrewCard>
-        </MicroCrewCards>
-      </MicroCrewInner>
+            <MicroCrewCard>
+              <MicroCrewBadge>무료 지사창업 지원</MicroCrewBadge>
+              <MicroCrewQuote>“저도 이제 사장이 되고싶어요”</MicroCrewQuote>
+            </MicroCrewCard>
+          </MicroCrewCards>
+        </MicroCrewInner>
+      </FadeInUpOnView>
     </MicroCrewWrapper>
   );
 };

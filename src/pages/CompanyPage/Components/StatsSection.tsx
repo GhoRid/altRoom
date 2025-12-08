@@ -1,25 +1,28 @@
 import styled from "styled-components";
 import { colors } from "../../../styles/color";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const StatsSection = () => {
   return (
     <Section>
-      <StatsInner>
-        <StatItem>
-          <StatNumber>100억+</StatNumber>
-          <StatLabel>누적 계약액</StatLabel>
-        </StatItem>
+      <FadeInUpOnView delay={0.15}>
+        <StatsInner>
+          <StatItem>
+            <StatNumber>100억+</StatNumber>
+            <StatLabel>누적 계약액</StatLabel>
+          </StatItem>
 
-        <StatItem>
-          <StatNumber>50+</StatNumber>
-          <StatLabel>파트너사</StatLabel>
-        </StatItem>
+          <StatItem>
+            <StatNumber>50+</StatNumber>
+            <StatLabel>파트너사</StatLabel>
+          </StatItem>
 
-        <StatItem>
-          <StatNumber>98%</StatNumber>
-          <StatLabel>고객 만족도</StatLabel>
-        </StatItem>
-      </StatsInner>
+          <StatItem>
+            <StatNumber>98%</StatNumber>
+            <StatLabel>고객 만족도</StatLabel>
+          </StatItem>
+        </StatsInner>
+      </FadeInUpOnView>
     </Section>
   );
 };
@@ -30,7 +33,7 @@ const Section = styled.section`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 64px;
+  margin-top: 40px;
 `;
 
 const StatsInner = styled.div`

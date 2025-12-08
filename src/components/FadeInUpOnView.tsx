@@ -18,6 +18,8 @@ const Wrapper = styled.div<{
   $transitionHeight: number;
   $delay: number;
 }>`
+  width: 100%;
+  height: 100%;
   opacity: 0;
   transform: translateY(${({ $transitionHeight }) => $transitionHeight}px);
   ${({ $isVisible, $duration, $transitionHeight, $delay }) =>

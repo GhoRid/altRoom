@@ -3,15 +3,18 @@ import HeroSection from "./components/HeroSection";
 import VisionImage from "../../assets/images/company/vision.webp";
 import VisionCardSection from "./components/VisionCardSection";
 import CoreValuesSection from "../CompanyPage/Components/CoreValuesSection";
+import FadeInUpOnView from "../../components/FadeInUpOnView";
 
 const VisionPage = () => {
   return (
     <Wrapper>
       <HeroSection />
 
-      <ImageCard>
-        <img src={VisionImage} alt="알트룸의 비전을 상징하는 이미지" />
-      </ImageCard>
+      <FadeInUpOnView threshold={0.1} delay={0.15}>
+        <ImageCard>
+          <img src={VisionImage} alt="알트룸의 비전을 상징하는 이미지" />
+        </ImageCard>
+      </FadeInUpOnView>
 
       <VisionCardSection />
       <CoreValuesSection />

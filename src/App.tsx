@@ -32,6 +32,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<MainLayout />}>
+          <Route path="*" element={<Navigate to="/" replace />} />
           <Route
             path="/auth/login"
             element={

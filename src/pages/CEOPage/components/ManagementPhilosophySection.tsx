@@ -1,52 +1,55 @@
 import styled from "styled-components";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const ManagementPhilosophySection = () => {
   return (
     <PhilosophyWrapper>
-      <PhilosophyCard>
-        <PhilosophyTitle>경영 이념</PhilosophyTitle>
-        <PhilosophySubtitle>
-          “모든 공간에는 이야기가 있습니다”
-        </PhilosophySubtitle>
-        <PhilosophyText>
-          알트룸은 각 공간이 가진 고유한 가치를 이해하고,
-          <br />
-          그 공간에 담길 삶의 이야기를 소중히 생각합니다.
-          <br />
-          우리는 단순한 인테리어가 아닌, 삶의 질을 높이는
-          <br />
-          의미 있는 공간을 만들어가고자 합니다.
-        </PhilosophyText>
-      </PhilosophyCard>
-
-      <ValuesRow>
-        <ValueItem>
-          <ValueTitle>공간 가치</ValueTitle>
-          <ValueText>
-            각 공간의 고유한
+      <FadeInUpOnView threshold={0.1}>
+        <PhilosophyCard>
+          <PhilosophyTitle>경영 이념</PhilosophyTitle>
+          <PhilosophySubtitle>
+            “모든 공간에는 이야기가 있습니다”
+          </PhilosophySubtitle>
+          <PhilosophyText>
+            알트룸은 각 공간이 가진 고유한 가치를 이해하고,
             <br />
-            스토리 창출
-          </ValueText>
-        </ValueItem>
-
-        <ValueItem>
-          <ValueTitle>투명성</ValueTitle>
-          <ValueText>
-            정직한 프로세스와
+            그 공간에 담길 삶의 이야기를 소중히 생각합니다.
             <br />
-            명확한 커뮤니케이션
-          </ValueText>
-        </ValueItem>
-
-        <ValueItem>
-          <ValueTitle>혁신</ValueTitle>
-          <ValueText>
-            디지털 기술을 통한
+            우리는 단순한 인테리어가 아닌, 삶의 질을 높이는
             <br />
-            새로운 경험 제공
-          </ValueText>
-        </ValueItem>
-      </ValuesRow>
+            의미 있는 공간을 만들어가고자 합니다.
+          </PhilosophyText>
+        </PhilosophyCard>
+
+        <ValuesRow>
+          <ValueItem>
+            <ValueTitle>공간 가치</ValueTitle>
+            <ValueText>
+              각 공간의 고유한
+              <br />
+              스토리 창출
+            </ValueText>
+          </ValueItem>
+
+          <ValueItem>
+            <ValueTitle>투명성</ValueTitle>
+            <ValueText>
+              정직한 프로세스와
+              <br />
+              명확한 커뮤니케이션
+            </ValueText>
+          </ValueItem>
+
+          <ValueItem>
+            <ValueTitle>혁신</ValueTitle>
+            <ValueText>
+              디지털 기술을 통한
+              <br />
+              새로운 경험 제공
+            </ValueText>
+          </ValueItem>
+        </ValuesRow>
+      </FadeInUpOnView>
     </PhilosophyWrapper>
   );
 };

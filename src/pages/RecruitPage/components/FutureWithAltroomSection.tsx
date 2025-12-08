@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const FutureWithAltroomSection = () => {
   const tags = [
@@ -16,36 +17,38 @@ const FutureWithAltroomSection = () => {
 
   return (
     <FutureWrapper>
-      <FutureInner>
-        <FutureTitle>알트룸과 함께하는 미래</FutureTitle>
+      <FadeInUpOnView threshold={0.1}>
+        <FutureInner>
+          <FutureTitle>알트룸과 함께하는 미래</FutureTitle>
 
-        <FutureBody>
-          <p>
-            알트룸은 소비자의 알권리와 시장의 투명성을 통해
-            <br />
-            인테리어 시장의 부정적인 이미지를 변화시키고자 노력합니다.
-            <br />
-            <br />
-            단순, 시장의 신뢰도를 넘어서
-            <strong>
-              높은 품질의 디자인과 마감을
-              <br /> 대중적인 비용으로 제공
-            </strong>
-            할 수 있도록 끊임 없이 고민하며 <br />
-            다양한 프로젝트들을 완수해 나가고 있습니다.
-          </p>
-        </FutureBody>
+          <FutureBody>
+            <p>
+              알트룸은 소비자의 알권리와 시장의 투명성을 통해
+              <br />
+              인테리어 시장의 부정적인 이미지를 변화시키고자 노력합니다.
+              <br />
+              <br />
+              단순, 시장의 신뢰도를 넘어서
+              <strong>
+                높은 품질의 디자인과 마감을
+                <br /> 대중적인 비용으로 제공
+              </strong>
+              할 수 있도록 끊임 없이 고민하며 <br />
+              다양한 프로젝트들을 완수해 나가고 있습니다.
+            </p>
+          </FutureBody>
 
-        <FutureTags>
-          {tags.map((tag) => (
-            <FutureTag key={tag}>{tag}</FutureTag>
-          ))}
-        </FutureTags>
+          <FutureTags>
+            {tags.map((tag) => (
+              <FutureTag key={tag}>{tag}</FutureTag>
+            ))}
+          </FutureTags>
 
-        <FutureFooterText>
-          체계적인 프로젝트 관리 시스템을 통해 효율성 있는 업무를 지향합니다.
-        </FutureFooterText>
-      </FutureInner>
+          <FutureFooterText>
+            체계적인 프로젝트 관리 시스템을 통해 효율성 있는 업무를 지향합니다.
+          </FutureFooterText>
+        </FutureInner>
+      </FadeInUpOnView>
     </FutureWrapper>
   );
 };

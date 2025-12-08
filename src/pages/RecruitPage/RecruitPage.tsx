@@ -4,6 +4,7 @@ import RecruitImage from "../../assets/images/company/recruite.webp";
 import MicroCrewSection from "./components/MicroCrewSection";
 import FutureWithAltroomSection from "./components/FutureWithAltroomSection";
 import ApplySection from "./components/ApplySection";
+import FadeInUpOnView from "../../components/FadeInUpOnView";
 
 const RecruitPage = () => {
   return (
@@ -11,7 +12,9 @@ const RecruitPage = () => {
       <HeroSection />
 
       <ImageCard>
-        <img src={RecruitImage} alt="알트룸 채용을 상징하는 이미지" />
+        <FadeInUpOnView threshold={0.1} delay={0.15}>
+          <img src={RecruitImage} alt="알트룸 채용을 상징하는 이미지" />
+        </FadeInUpOnView>
       </ImageCard>
 
       <MicroCrewSection />

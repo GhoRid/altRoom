@@ -1,20 +1,23 @@
 import styled from "styled-components";
 import vedio from "../../../assets/images/company/vedio.webp";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const VedioSection = () => {
   return (
     <Section>
-      <TextBlock>
-        <Title>디지털 혁신을 통한 가치 창출</Title>
-        <Description>
-          <p>알트룸은 인테리어 시장의 디지털 전환을 선도하며,</p>
-          <p>고객과 파트너 모두에게 새로운 가치를 제공합니다.</p>
-        </Description>
-      </TextBlock>
+      <FadeInUpOnView threshold={0.1}>
+        <TextBlock>
+          <Title>디지털 혁신을 통한 가치 창출</Title>
+          <Description>
+            <p>알트룸은 인테리어 시장의 디지털 전환을 선도하며,</p>
+            <p>고객과 파트너 모두에게 새로운 가치를 제공합니다.</p>
+          </Description>
+        </TextBlock>
 
-      <HeroImageWrapper>
-        <HeroImage src={vedio} alt="디지털 혁신을 상징하는 코드 화면" />
-      </HeroImageWrapper>
+        <HeroImageWrapper>
+          <HeroImage src={vedio} alt="디지털 혁신을 상징하는 코드 화면" />
+        </HeroImageWrapper>
+      </FadeInUpOnView>
     </Section>
   );
 };

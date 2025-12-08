@@ -3,87 +3,93 @@ import CEOImageUrl from "../../../assets/images/ceo/ceo.webp";
 import { colors } from "../../../styles/color";
 import { ReactComponent as InstagramIcon } from "../../../assets/svgs/instagram.svg";
 import { ReactComponent as ThreadIcon } from "../../../assets/svgs/thread.svg";
+import FadeInUpOnView from "../../../components/FadeInUpOnView";
 
 const IntroSection = () => {
   return (
     <Wrapper>
-      <HeaderSection>
-        <Title>CEO 인사말</Title>
-        <IntroLine>안녕하십니까,</IntroLine>
-        <IntroLine>
-          <IntroHighlight>알트룸 대표이사 장차근</IntroHighlight>
-          입니다.
-        </IntroLine>
+      <FadeInUpOnView threshold={0.1}>
+        <HeaderSection>
+          <Title>CEO 인사말</Title>
+          <IntroLine>안녕하십니까,</IntroLine>
+          <IntroLine>
+            <IntroHighlight>알트룸 대표이사 장차근</IntroHighlight>
+            입니다.
+          </IntroLine>
 
-        <SocialRow>
-          <SocialButton
-            onClick={() => {
-              window.open(
-                "https://www.instagram.com/jang.cha.keun/",
-                "_blank",
-                "noopener,noreferrer"
-              );
-            }}
-          >
-            <Icon>
-              <InstagramIcon />
-            </Icon>
-            <span>Instagram</span>
-          </SocialButton>
-          <SocialButton
-            onClick={() => {
-              window.open(
-                "https://www.threads.com/@jang.cha.keun",
-                "_blank",
-                "noopener,noreferrer"
-              );
-            }}
-          >
-            <Icon>
-              <ThreadIcon />
-            </Icon>
-            <span>Threads</span>
-          </SocialButton>
-        </SocialRow>
-      </HeaderSection>
+          <SocialRow>
+            <SocialButton
+              onClick={() => {
+                window.open(
+                  "https://www.instagram.com/jang.cha.keun/",
+                  "_blank",
+                  "noopener,noreferrer"
+                );
+              }}
+            >
+              <Icon>
+                <InstagramIcon />
+              </Icon>
+              <span>Instagram</span>
+            </SocialButton>
+            <SocialButton
+              onClick={() => {
+                window.open(
+                  "https://www.threads.com/@jang.cha.keun",
+                  "_blank",
+                  "noopener,noreferrer"
+                );
+              }}
+            >
+              <Icon>
+                <ThreadIcon />
+              </Icon>
+              <span>Threads</span>
+            </SocialButton>
+          </SocialRow>
+        </HeaderSection>
+      </FadeInUpOnView>
 
-      <ContentSection>
-        <ImageWrapper>
-          <img src={CEOImageUrl} alt="알트룸 대표이사 장차근 사진" />
-        </ImageWrapper>
+      <FadeInUpOnView threshold={0.1} delay={0.15}>
+        <ContentSection>
+          <ImageWrapper>
+            <img src={CEOImageUrl} alt="알트룸 대표이사 장차근 사진" />
+          </ImageWrapper>
 
-        <RightColumn>
-          <MessageCard>
-            <MessageParagraph>
-              알트룸은{" "}
-              <Highlight>인테리어 소비자들의 알권리와 투명성 확보</Highlight>를
-              통해 시장의 부정적인 이미지를 바꾸고자 하는 취지로 시작하였습니다.
-            </MessageParagraph>
-            <MessageParagraph>
-              정직한 비용으로 완벽한 프로세스를 구축하고자 하는 경영목표는
-              소비자에게 인테리어 과정을 행복한 경험으로 선물하기 위해
-              <Highlight> “행복한 기다림”</Highlight>이라는 비전으로 만나길
-              원합니다.
-            </MessageParagraph>
-          </MessageCard>
+          <RightColumn>
+            <MessageCard>
+              <MessageParagraph>
+                알트룸은{" "}
+                <Highlight>인테리어 소비자들의 알권리와 투명성 확보</Highlight>
+                를 통해 시장의 부정적인 이미지를 바꾸고자 하는 취지로
+                시작하였습니다.
+              </MessageParagraph>
+              <MessageParagraph>
+                정직한 비용으로 완벽한 프로세스를 구축하고자 하는 경영목표는
+                소비자에게 인테리어 과정을 행복한 경험으로 선물하기 위해
+                <Highlight> “행복한 기다림”</Highlight>이라는 비전으로 만나길
+                원합니다.
+              </MessageParagraph>
+            </MessageCard>
 
-          <SignatureBlock>
-            <SignatureRole>알트룸 대표이사</SignatureRole>
-            <SignatureName>장 차 근</SignatureName>
-          </SignatureBlock>
+            <SignatureBlock>
+              <SignatureRole>알트룸 대표이사</SignatureRole>
+              <SignatureName>장 차 근</SignatureName>
+            </SignatureBlock>
 
-          <CareerCard>
-            <CareerTitle>학력 및 수상</CareerTitle>
-            <CareerList>
-              <li>건국대학교 건축전문대학원 건축설계 석사</li>
-              <li>Asia Design Award golden prize of residential space</li>
-              <li>Energy Architecture award Future innovation Prize</li>
-              <li>직접건축 건축 지적</li>
-              <li>시각적 공간 가치상</li>
-            </CareerList>
-          </CareerCard>
-        </RightColumn>
-      </ContentSection>
+            <CareerCard>
+              <CareerTitle>학력 및 수상</CareerTitle>
+              <CareerList>
+                <li>건국대학교 건축전문대학원 건축설계 석사</li>
+                <li>Asia Design Award golden prize of residential space</li>
+                <li>Energy Architecture award Future innovation Prize</li>
+                <li>직접건축 건축 지적</li>
+                <li>시각적 공간 가치상</li>
+              </CareerList>
+            </CareerCard>
+          </RightColumn>
+        </ContentSection>
+      </FadeInUpOnView>
     </Wrapper>
   );
 };
